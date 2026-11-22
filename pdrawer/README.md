@@ -1,5 +1,7 @@
 # pdrawer 量化绘图
 
+[三版降仓对照图](../project/pwol-tiered-drawdown/README.md)：同尺度比较净值、回撤和目标仓位，标明冲击与隔夜跳空。
+
 pdrawer 只画已经算好的结果，不改账本、不重新拟合指标。读取同一运行目录里的 `summary.json` 与 `series.json`，先核对 NAV 和最大回撤，再画四个视图：费后净值、回撤、分调仓期收益及双边换手。图注明频率、费用、时间和数据性质。
 
 [看 PWOL 风格合成演示图](../project/pwol-synthetic-demo/artifacts/pwol-synthetic-dashboard.svg)

@@ -1,0 +1,20 @@
+{
+  "title": "PWOL tiered drawdown synthetic replay receipt",
+  "author": "Pengyi Peng",
+  "timestamp": "2026-11-22T17:16:54+08:00",
+  "frozen_at": "2026-11-22T17:11:15+08:00",
+  "scope": "SYNTHETIC_ONLY_NO_TRADE",
+  "protocol_sha256": "b97dfc6953d1385755dcba30e0f8820b9747375de5b365ec98cc11b48197250c",
+  "python": "3.12.14",
+  "matplotlib": "3.11.2",
+  "unit_tests_passed": 27,
+  "numerical_replays_identical": 2,
+  "svg_renders_identical": 2,
+  "legacy_drawdown_guard_numerical_artifacts_byte_identical": 3,
+  "sha256": {
+    "summary.json": "822d6293edd3c2924b8ccef6159d4be60278ae2c45a3157b04d700197abdd428",
+    "series.json": "c0a255e96c322337d11b5aea6bcda39d4dbe7f54795866308a48d2a50993369e",
+    "attribution.json": "6f3f91d99112e62a49861226f833a34ce129edab5182d0c4ae9275d0c766076b",
+    "comparison.svg": "7a0b5cf4f5dba111b3d41ee875594ab502744c34951ae00c7cbcf20ad85fd7e3"
+  }
+}

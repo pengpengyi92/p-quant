@@ -2,6 +2,8 @@
 
 ## 合成组合绘图与指标链
 
+[分档对砍半](project/pwol-tiered-drawdown/README.md)：Baseline 为原版与 8% 砍半；Change 为分档降仓、逐档恢复，含实际开盘前跳空；Measure 按 5/15 bp 费率看回撤、固定反弹、双边换手与行业；Result 两档费用均为 V 形、假反弹过线，跳空未过线；Trade-off 假反弹短窗仅多拿约 0.03 pp，5 bp 下全期少 6.59 pp；Next Action 保留基线，用预置新样本检验滑点、跳空和反复反弹。真实效果 UNMEASURED。
+
 [回撤降仓三路径](project/pwol-drawdown-guard/README.md)：Baseline 为同资产不降仓，Change 为仅看过去的风险开关，Measure 为同基准 MDD、跌后净收益及可对账行业贡献，Result 为 V 形少回撤 6.96 pp、少赚 19.15 pp。Trade-off：持续低仓位可挡后续跌幅，也能错过快速恢复。Next Action：在新数据测跳空和反复切换；真实效果 UNMEASURED。
 
 [合成基准及未校准压力](project/pwol-benchmark-stress/README.md)：Baseline 是同情景合成指数；Change 是匹配期次的超额、Alpha/Beta、IR 与各自回撤；Measure 使用公式单测和同刻度轨迹；Result 是未校准压力组合亏损 24.96%，落后基准 3.18 个百分点。Trade-off：固定合成机制，不衡量真实风险或收益；Next Action：冻结缺损及多压力路径。

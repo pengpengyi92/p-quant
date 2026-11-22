@@ -1,0 +1,1529 @@
+{
+  "scope": "SYNTHETIC_ONLY_NO_TRADE",
+  "taxonomy": {
+    "SYN_SOFTWARE": {
+      "sector": "Technology",
+      "industry": "Software",
+      "loading": 1.12
+    },
+    "SYN_SEMICONDUCTORS": {
+      "sector": "Technology",
+      "industry": "Semiconductors",
+      "loading": 1.27
+    },
+    "SYN_LOGISTICS": {
+      "sector": "Industrials",
+      "industry": "Logistics",
+      "loading": 0.78
+    },
+    "SYN_CAPITAL_GOODS": {
+      "sector": "Industrials",
+      "industry": "Capital Goods",
+      "loading": 0.92
+    }
+  },
+  "cases": {
+    "new_v": {
+      "original": {
+        "full": {
+          "opening_nav": 1000000.0,
+          "net_pnl": 161734.06484156288,
+          "compound_window_return": 0.16173406484156289,
+          "sector": {
+            "Industrials": {
+              "gross_pnl": 67407.4807135993,
+              "fees": 661.9469053392003,
+              "net_pnl": 66745.53380826011,
+              "net_contribution_pp": 6.674553380826011
+            },
+            "Technology": {
+              "gross_pnl": 95685.51042551271,
+              "fees": 696.979392209994,
+              "net_pnl": 94988.53103330272,
+              "net_contribution_pp": 9.498853103330271
+            }
+          },
+          "industry": {
+            "Industrials / Capital Goods": {
+              "gross_pnl": 34575.35562386536,
+              "fees": 332.6089453416948,
+              "net_pnl": 34242.74667852367,
+              "net_contribution_pp": 3.424274667852367
+            },
+            "Industrials / Logistics": {
+              "gross_pnl": 32832.125089733934,
+              "fees": 329.3379599975055,
+              "net_pnl": 32502.78712973643,
+              "net_contribution_pp": 3.250278712973643
+            },
+            "Technology / Semiconductors": {
+              "gross_pnl": 45760.15693861956,
+              "fees": 348.0145980948439,
+              "net_pnl": 45412.14234052472,
+              "net_contribution_pp": 4.541214234052472
+            },
+            "Technology / Software": {
+              "gross_pnl": 49925.35348689315,
+              "fees": 348.9647941151501,
+              "net_pnl": 49576.388692778004,
+              "net_contribution_pp": 4.9576388692778
+            }
+          },
+          "max_abs_reconciliation_residual": 5.820766091346741e-11
+        },
+        "rebound": {
+          "opening_nav": 860118.038219228,
+          "net_pnl": 322944.2922109553,
+          "compound_window_return": 0.37546508486157665,
+          "sector": {
+            "Industrials": {
+              "gross_pnl": 142196.81907573994,
+              "fees": 29.78957732742588,
+              "net_pnl": 142167.0294984125,
+              "net_contribution_pp": 16.528781304569826
+            },
+            "Technology": {
+              "gross_pnl": 180807.0225151804,
+              "fees": 29.759802637443414,
+              "net_pnl": 180777.26271254296,
+              "net_contribution_pp": 21.017727181587862
+            }
+          },
+          "industry": {
+            "Industrials / Capital Goods": {
+              "gross_pnl": 77712.6053205568,
+              "fees": 17.29189472519266,
+              "net_pnl": 77695.31342583161,
+              "net_contribution_pp": 9.033098943802004
+            },
+            "Industrials / Logistics": {
+              "gross_pnl": 64484.213755183126,
+              "fees": 12.497682602233224,
+              "net_pnl": 64471.71607258089,
+              "net_contribution_pp": 7.49568236076782
+            },
+            "Technology / Semiconductors": {
+              "gross_pnl": 94236.9492441814,
+              "fees": 13.430060548019014,
+              "net_pnl": 94223.51918363338,
+              "net_contribution_pp": 10.954719584617939
+            },
+            "Technology / Software": {
+              "gross_pnl": 86570.07327099898,
+              "fees": 16.3297420894244,
+              "net_pnl": 86553.74352890956,
+              "net_contribution_pp": 10.06300759696992
+            }
+          },
+          "max_abs_reconciliation_residual": 1.7462298274040222e-10
+        }
+      },
+      "binary": {
+        "full": {
+          "opening_nav": 1000000.0,
+          "net_pnl": 102066.10424210667,
+          "compound_window_return": 0.10206610424210667,
+          "sector": {
+            "Industrials": {
+              "gross_pnl": 41355.792206988335,
+              "fees": 884.7704997548367,
+              "net_pnl": 40471.0217072335,
+              "net_contribution_pp": 4.04710217072335
+            },
+            "Technology": {
+              "gross_pnl": 62499.63316059651,
+              "fees": 904.5506257240654,
+              "net_pnl": 61595.08253487245,
+              "net_contribution_pp": 6.159508253487244
+            }
+          },
+          "industry": {
+            "Industrials / Capital Goods": {
+              "gross_pnl": 20049.97054719229,
+              "fees": 438.91838660240495,
+              "net_pnl": 19611.052160589887,
+              "net_contribution_pp": 1.9611052160589886
+            },
+            "Industrials / Logistics": {
+              "gross_pnl": 21305.821659796045,
+              "fees": 445.85211315243174,
+              "net_pnl": 20859.969546643613,
+              "net_contribution_pp": 2.0859969546643615
+            },
+            "Technology / Semiconductors": {
+              "gross_pnl": 27957.458856429184,
+              "fees": 452.5680497110738,
+              "net_pnl": 27504.89080671811,
+              "net_contribution_pp": 2.750489080671811
+            },
+            "Technology / Software": {
+              "gross_pnl": 34542.174304167325,
+              "fees": 451.9825760129916,
+              "net_pnl": 34090.191728154336,
+              "net_contribution_pp": 3.4090191728154338
+            }
+          },
+          "max_abs_reconciliation_residual": 7.275957614183426e-10
+        },
+        "rebound": {
+          "opening_nav": 911556.9671437733,
+          "net_pnl": 210741.9591174561,
+          "compound_window_return": 0.23118901693855112,
+          "sector": {
+            "Industrials": {
+              "gross_pnl": 92892.3557335479,
+              "fees": 164.96309645127445,
+              "net_pnl": 92727.39263709662,
+              "net_contribution_pp": 10.172418837151119
+            },
+            "Technology": {
+              "gross_pnl": 118155.94517682889,
+              "fees": 141.3786964693635,
+              "net_pnl": 118014.56648035953,
+              "net_contribution_pp": 12.946482856704
+            }
+          },
+          "industry": {
+            "Industrials / Capital Goods": {
+              "gross_pnl": 50768.38604612787,
+              "fees": 82.38710700484691,
+              "net_pnl": 50685.99893912302,
+              "net_contribution_pp": 5.560376451067011
+            },
+            "Industrials / Logistics": {
+              "gross_pnl": 42123.96968742003,
+              "fees": 82.57598944642753,
+              "net_pnl": 42041.3936979736,
+              "net_contribution_pp": 4.612042386084107
+            },
+            "Technology / Semiconductors": {
+              "gross_pnl": 61095.35220152503,
+              "fees": 69.96403112315491,
+              "net_pnl": 61025.38817040187,
+              "net_contribution_pp": 6.69463241135831
+            },
+            "Technology / Software": {
+              "gross_pnl": 57060.59297530386,
+              "fees": 71.4146653462086,
+              "net_pnl": 56989.17830995765,
+              "net_contribution_pp": 6.2518504453456885
+            }
+          },
+          "max_abs_reconciliation_residual": 5.820766091346741e-11
+        }
+      },
+      "tiered": {
+        "full": {
+          "opening_nav": 1000000.0,
+          "net_pnl": 104928.46444780868,
+          "compound_window_return": 0.10492846444780868,
+          "sector": {
+            "Industrials": {
+              "gross_pnl": 43258.90044020371,
+              "fees": 849.701587208282,
+              "net_pnl": 42409.198852995425,
+              "net_contribution_pp": 4.240919885299543
+            },
+            "Technology": {
+              "gross_pnl": 63423.329947787424,
+              "fees": 904.0643529747675,
+              "net_pnl": 62519.265594812656,
+              "net_contribution_pp": 6.251926559481266
+            }
+          },
+          "industry": {
+            "Industrials / Capital Goods": {
+              "gross_pnl": 20904.585976407605,
+              "fees": 420.4574994347806,
+              "net_pnl": 20484.128476972823,
+              "net_contribution_pp": 2.048412847697282
+            },
+            "Industrials / Logistics": {
+              "gross_pnl": 22354.3144637961,
+              "fees": 429.2440877735014,
+              "net_pnl": 21925.0703760226,
+              "net_contribution_pp": 2.19250703760226
+            },
+            "Technology / Semiconductors": {
+              "gross_pnl": 28441.060085813708,
+              "fees": 452.3526665075983,
+              "net_pnl": 27988.70741930611,
+              "net_contribution_pp": 2.798870741930611
+            },
+            "Technology / Software": {
+              "gross_pnl": 34982.26986197371,
+              "fees": 451.7116864671692,
+              "net_pnl": 34530.55817550654,
+              "net_contribution_pp": 3.4530558175506547
+            }
+          },
+          "max_abs_reconciliation_residual": 6.111804395914078e-10
+        },
+        "rebound": {
+          "opening_nav": 907098.0624648301,
+          "net_pnl": 218115.77404821373,
+          "compound_window_return": 0.24045445919654412,
+          "sector": {
+            "Industrials": {
+              "gross_pnl": 96812.20104063305,
+              "fees": 165.93907017078806,
+              "net_pnl": 96646.26197046226,
+              "net_contribution_pp": 10.654444758469475
+            },
+            "Technology": {
+              "gross_pnl": 121610.43893366517,
+              "fees": 140.92685591391717,
+              "net_pnl": 121469.51207775125,
+              "net_contribution_pp": 13.391001161184914
+            }
+          },
+          "industry": {
+            "Industrials / Capital Goods": {
+              "gross_pnl": 52857.67271576624,
+              "fees": 82.44818658973274,
+              "net_pnl": 52775.22452917651,
+              "net_contribution_pp": 5.818028580699641
+            },
+            "Industrials / Logistics": {
+              "gross_pnl": 43954.52832486682,
+              "fees": 83.49088358105531,
+              "net_pnl": 43871.03744128576,
+              "net_contribution_pp": 4.836416177769835
+            },
+            "Technology / Semiconductors": {
+              "gross_pnl": 62808.0710541577,
+              "fees": 69.74471832506357,
+              "net_pnl": 62738.32633583264,
+              "net_contribution_pp": 6.916377504473516
+            },
+            "Technology / Software": {
+              "gross_pnl": 58802.367879507474,
+              "fees": 71.18213758885358,
+              "net_pnl": 58731.18574191862,
+              "net_contribution_pp": 6.4746236567113975
+            }
+          },
+          "max_abs_reconciliation_residual": 2.3283064365386963e-10
+        }
+      },
+      "benchmark": {
+        "full": {
+          "opening_nav": 1000000.0,
+          "net_pnl": 162566.0679956358,
+          "compound_window_return": 0.1625660679956358,
+          "sector": {
+            "Industrials": {
+              "gross_pnl": 63180.78015210258,
+              "fees": 0.0,
+              "net_pnl": 63180.78015210258,
+              "net_contribution_pp": 6.318078015210258
+            },
+            "Technology": {
+              "gross_pnl": 99385.28784353423,
+              "fees": 0.0,
+              "net_pnl": 99385.28784353423,
+              "net_contribution_pp": 9.938528784353421
+            }
+          },
+          "industry": {
+            "Industrials / Capital Goods": {
+              "gross_pnl": 31563.374821774258,
+              "fees": 0.0,
+              "net_pnl": 31563.374821774258,
+              "net_contribution_pp": 3.1563374821774257
+            },
+            "Industrials / Logistics": {
+              "gross_pnl": 31617.40533032832,
+              "fees": 0.0,
+              "net_pnl": 31617.40533032832,
+              "net_contribution_pp": 3.161740533032832
+            },
+            "Technology / Semiconductors": {
+              "gross_pnl": 46499.491001518654,
+              "fees": 0.0,
+              "net_pnl": 46499.491001518654,
+              "net_contribution_pp": 4.649949100151866
+            },
+            "Technology / Software": {
+              "gross_pnl": 52885.79684201558,
+              "fees": 0.0,
+              "net_pnl": 52885.79684201558,
+              "net_contribution_pp": 5.288579684201558
+            }
+          },
+          "max_abs_reconciliation_residual": 1.0186340659856796e-09
+        },
+        "rebound": {
+          "opening_nav": 860342.2500877314,
+          "net_pnl": 325949.64081142156,
+          "compound_window_return": 0.3788604369693382,
+          "sector": {
+            "Industrials": {
+              "gross_pnl": 135938.6431604582,
+              "fees": 0.0,
+              "net_pnl": 135938.6431604582,
+              "net_contribution_pp": 15.800530910413404
+            },
+            "Technology": {
+              "gross_pnl": 190010.99765096337,
+              "fees": 0.0,
+              "net_pnl": 190010.99765096337,
+              "net_contribution_pp": 22.085512786520415
+            }
+          },
+          "industry": {
+            "Industrials / Capital Goods": {
+              "gross_pnl": 72984.5695712227,
+              "fees": 0.0,
+              "net_pnl": 72984.5695712227,
+              "net_contribution_pp": 8.483201837847702
+            },
+            "Industrials / Logistics": {
+              "gross_pnl": 62954.0735892355,
+              "fees": 0.0,
+              "net_pnl": 62954.0735892355,
+              "net_contribution_pp": 7.317329072565703
+            },
+            "Technology / Semiconductors": {
+              "gross_pnl": 97646.64673723109,
+              "fees": 0.0,
+              "net_pnl": 97646.64673723109,
+              "net_contribution_pp": 11.34974444498963
+            },
+            "Technology / Software": {
+              "gross_pnl": 92364.35091373228,
+              "fees": 0.0,
+              "net_pnl": 92364.35091373228,
+              "net_contribution_pp": 10.735768341530784
+            }
+          },
+          "max_abs_reconciliation_residual": 0.0
+        }
+      }
+    },
+    "gap": {
+      "original": {
+        "full": {
+          "opening_nav": 1000000.0,
+          "net_pnl": -84299.8609658907,
+          "compound_window_return": -0.08429986096589069,
+          "sector": {
+            "Industrials": {
+              "gross_pnl": -57182.00395212107,
+              "fees": 573.9262088780756,
+              "net_pnl": -57755.930160999145,
+              "net_contribution_pp": -5.775593016099915
+            },
+            "Technology": {
+              "gross_pnl": -25934.982888630904,
+              "fees": 608.9479162609517,
+              "net_pnl": -26543.930804891857,
+              "net_contribution_pp": -2.6543930804891858
+            }
+          },
+          "industry": {
+            "Industrials / Capital Goods": {
+              "gross_pnl": -30282.215496069774,
+              "fees": 290.1125264452547,
+              "net_pnl": -30572.328022515027,
+              "net_contribution_pp": -3.057232802251503
+            },
+            "Industrials / Logistics": {
+              "gross_pnl": -26899.788456051298,
+              "fees": 283.81368243282094,
+              "net_pnl": -27183.60213848412,
+              "net_contribution_pp": -2.718360213848412
+            },
+            "Technology / Semiconductors": {
+              "gross_pnl": -16308.83750118094,
+              "fees": 301.33562454871367,
+              "net_pnl": -16610.173125729652,
+              "net_contribution_pp": -1.6610173125729653
+            },
+            "Technology / Software": {
+              "gross_pnl": -9626.145387449966,
+              "fees": 307.61229171223806,
+              "net_pnl": -9933.757679162203,
+              "net_contribution_pp": -0.9933757679162204
+            }
+          },
+          "max_abs_reconciliation_residual": 3.055902197957039e-10
+        },
+        "rebound": {
+          "opening_nav": 784919.1468339557,
+          "net_pnl": 75713.46716571518,
+          "compound_window_return": 0.09646021182068559,
+          "sector": {
+            "Industrials": {
+              "gross_pnl": 34436.94943268238,
+              "fees": 22.74492975710143,
+              "net_pnl": 34414.20450292528,
+              "net_contribution_pp": 4.384426681619141
+            },
+            "Technology": {
+              "gross_pnl": 41322.03034885508,
+              "fees": 22.7676860650125,
+              "net_pnl": 41299.26266279007,
+              "net_contribution_pp": 5.261594500449439
+            }
+          },
+          "industry": {
+            "Industrials / Capital Goods": {
+              "gross_pnl": 18021.568888544454,
+              "fees": 13.032269825652257,
+              "net_pnl": 18008.5366187188,
+              "net_contribution_pp": 2.2943174072588124
+            },
+            "Industrials / Logistics": {
+              "gross_pnl": 16415.380544137926,
+              "fees": 9.712659931449176,
+              "net_pnl": 16405.667884206476,
+              "net_contribution_pp": 2.090109274360329
+            },
+            "Technology / Semiconductors": {
+              "gross_pnl": 22795.750887169885,
+              "fees": 10.258852317497352,
+              "net_pnl": 22785.49203485239,
+              "net_contribution_pp": 2.902909443190396
+            },
+            "Technology / Software": {
+              "gross_pnl": 18526.279461685193,
+              "fees": 12.50883374751515,
+              "net_pnl": 18513.77062793768,
+              "net_contribution_pp": 2.358685057259043
+            }
+          },
+          "max_abs_reconciliation_residual": 1.7462298274040222e-10
+        },
+        "gap_session": {
+          "opening_nav": 976195.5711998213,
+          "net_pnl": -162641.7595174713,
+          "compound_window_return": -0.16660776212861914,
+          "sector": {
+            "Industrials": {
+              "gross_pnl": -63027.646583680544,
+              "fees": 0.0,
+              "net_pnl": -63027.646583680544,
+              "net_contribution_pp": -6.456456927602591
+            },
+            "Technology": {
+              "gross_pnl": -99614.11293379066,
+              "fees": 0.0,
+              "net_pnl": -99614.11293379066,
+              "net_contribution_pp": -10.204319285259313
+            }
+          },
+          "industry": {
+            "Industrials / Capital Goods": {
+              "gross_pnl": -33710.4141168072,
+              "fees": 0.0,
+              "net_pnl": -33710.4141168072,
+              "net_contribution_pp": -3.4532439104773287
+            },
+            "Industrials / Logistics": {
+              "gross_pnl": -29317.232466873345,
+              "fees": 0.0,
+              "net_pnl": -29317.232466873345,
+              "net_contribution_pp": -3.0032130171252627
+            },
+            "Technology / Semiconductors": {
+              "gross_pnl": -52620.13248591206,
+              "fees": 0.0,
+              "net_pnl": -52620.13248591206,
+              "net_contribution_pp": -5.390326901528325
+            },
+            "Technology / Software": {
+              "gross_pnl": -46993.9804478786,
+              "fees": 0.0,
+              "net_pnl": -46993.9804478786,
+              "net_contribution_pp": -4.813992383730987
+            }
+          },
+          "max_abs_reconciliation_residual": 1.1641532182693481e-10
+        }
+      },
+      "binary": {
+        "full": {
+          "opening_nav": 1000000.0,
+          "net_pnl": -135944.1856628179,
+          "compound_window_return": -0.1359441856628179,
+          "sector": {
+            "Industrials": {
+              "gross_pnl": -70183.73134915216,
+              "fees": 573.7221801084202,
+              "net_pnl": -70757.45352926059,
+              "net_contribution_pp": -7.0757453529260586
+            },
+            "Technology": {
+              "gross_pnl": -64585.26450377836,
+              "fees": 601.4676297793648,
+              "net_pnl": -65186.73213355772,
+              "net_contribution_pp": -6.518673213355772
+            }
+          },
+          "industry": {
+            "Industrials / Capital Goods": {
+              "gross_pnl": -37482.848422845214,
+              "fees": 286.4235990433574,
+              "net_pnl": -37769.27202188857,
+              "net_contribution_pp": -3.7769272021888574
+            },
+            "Industrials / Logistics": {
+              "gross_pnl": -32700.882926306957,
+              "fees": 287.2985810650628,
+              "net_pnl": -32988.18150737202,
+              "net_contribution_pp": -3.298818150737202
+            },
+            "Technology / Semiconductors": {
+              "gross_pnl": -36273.35910983716,
+              "fees": 298.55220319116717,
+              "net_pnl": -36571.91131302833,
+              "net_contribution_pp": -3.657191131302833
+            },
+            "Technology / Software": {
+              "gross_pnl": -28311.905393941197,
+              "fees": 302.9154265881976,
+              "net_pnl": -28614.820820529396,
+              "net_contribution_pp": -2.8614820820529396
+            }
+          },
+          "max_abs_reconciliation_residual": 4.0745362639427185e-10
+        },
+        "rebound": {
+          "opening_nav": 798967.3184093283,
+          "net_pnl": 38096.393080180744,
+          "compound_window_return": 0.04768204180870279,
+          "sector": {
+            "Industrials": {
+              "gross_pnl": 17242.166787820213,
+              "fees": 14.456951522682765,
+              "net_pnl": 17227.70983629753,
+              "net_contribution_pp": 2.1562471254263995
+            },
+            "Technology": {
+              "gross_pnl": 20881.579826496214,
+              "fees": 12.896582613044687,
+              "net_pnl": 20868.68324388317,
+              "net_contribution_pp": 2.611957055443874
+            }
+          },
+          "industry": {
+            "Industrials / Capital Goods": {
+              "gross_pnl": 9048.314613746423,
+              "fees": 7.360379549144949,
+              "net_pnl": 9040.954234197277,
+              "net_contribution_pp": 1.1315799815438008
+            },
+            "Industrials / Logistics": {
+              "gross_pnl": 8193.852174073792,
+              "fees": 7.096571973537816,
+              "net_pnl": 8186.755602100255,
+              "net_contribution_pp": 1.024667143882599
+            },
+            "Technology / Semiconductors": {
+              "gross_pnl": 11539.72869126818,
+              "fees": 6.373552720209962,
+              "net_pnl": 11533.35513854797,
+              "net_contribution_pp": 1.4435327794771176
+            },
+            "Technology / Software": {
+              "gross_pnl": 9341.851135228037,
+              "fees": 6.5230298928347255,
+              "net_pnl": 9335.328105335202,
+              "net_contribution_pp": 1.1684242759667562
+            }
+          },
+          "max_abs_reconciliation_residual": 4.3655745685100555e-11
+        },
+        "gap_session": {
+          "opening_nav": 976195.5711998213,
+          "net_pnl": -162641.7595174713,
+          "compound_window_return": -0.16660776212861914,
+          "sector": {
+            "Industrials": {
+              "gross_pnl": -63027.646583680544,
+              "fees": 0.0,
+              "net_pnl": -63027.646583680544,
+              "net_contribution_pp": -6.456456927602591
+            },
+            "Technology": {
+              "gross_pnl": -99614.11293379066,
+              "fees": 0.0,
+              "net_pnl": -99614.11293379066,
+              "net_contribution_pp": -10.204319285259313
+            }
+          },
+          "industry": {
+            "Industrials / Capital Goods": {
+              "gross_pnl": -33710.4141168072,
+              "fees": 0.0,
+              "net_pnl": -33710.4141168072,
+              "net_contribution_pp": -3.4532439104773287
+            },
+            "Industrials / Logistics": {
+              "gross_pnl": -29317.232466873345,
+              "fees": 0.0,
+              "net_pnl": -29317.232466873345,
+              "net_contribution_pp": -3.0032130171252627
+            },
+            "Technology / Semiconductors": {
+              "gross_pnl": -52620.13248591206,
+              "fees": 0.0,
+              "net_pnl": -52620.13248591206,
+              "net_contribution_pp": -5.390326901528325
+            },
+            "Technology / Software": {
+              "gross_pnl": -46993.9804478786,
+              "fees": 0.0,
+              "net_pnl": -46993.9804478786,
+              "net_contribution_pp": -4.813992383730987
+            }
+          },
+          "max_abs_reconciliation_residual": 1.1641532182693481e-10
+        }
+      },
+      "tiered": {
+        "full": {
+          "opening_nav": 1000000.0,
+          "net_pnl": -161483.45450018696,
+          "compound_window_return": -0.16148345450018695,
+          "sector": {
+            "Industrials": {
+              "gross_pnl": -77035.3920879747,
+              "fees": 567.5699184107857,
+              "net_pnl": -77602.96200638548,
+              "net_contribution_pp": -7.760296200638549
+            },
+            "Technology": {
+              "gross_pnl": -83274.97457472928,
+              "fees": 605.5179190725758,
+              "net_pnl": -83880.49249380185,
+              "net_contribution_pp": -8.388049249380185
+            }
+          },
+          "industry": {
+            "Industrials / Capital Goods": {
+              "gross_pnl": -41246.920284378444,
+              "fees": 282.9526971151993,
+              "net_pnl": -41529.872981493645,
+              "net_contribution_pp": -4.152987298149364
+            },
+            "Industrials / Logistics": {
+              "gross_pnl": -35788.47180359626,
+              "fees": 284.61722129558643,
+              "net_pnl": -36073.089024891844,
+              "net_contribution_pp": -3.6073089024891845
+            },
+            "Technology / Semiconductors": {
+              "gross_pnl": -45946.7042732908,
+              "fees": 301.06428494510504,
+              "net_pnl": -46247.768558235904,
+              "net_contribution_pp": -4.62477685582359
+            },
+            "Technology / Software": {
+              "gross_pnl": -37328.27030143848,
+              "fees": 304.45363412747065,
+              "net_pnl": -37632.723935565955,
+              "net_contribution_pp": -3.7632723935565955
+            }
+          },
+          "max_abs_reconciliation_residual": 4.0745362639427185e-10
+        },
+        "rebound": {
+          "opening_nav": 806058.0629359843,
+          "net_pnl": 19104.30919778021,
+          "compound_window_return": 0.02370090949552035,
+          "sector": {
+            "Industrials": {
+              "gross_pnl": 8647.091050467003,
+              "fees": 7.438072536926579,
+              "net_pnl": 8639.652977930076,
+              "net_contribution_pp": 1.0718400292977681
+            },
+            "Technology": {
+              "gross_pnl": 10470.920746686068,
+              "fees": 6.264526836020945,
+              "net_pnl": 10464.656219850047,
+              "net_contribution_pp": 1.298250920254256
+            }
+          },
+          "industry": {
+            "Industrials / Capital Goods": {
+              "gross_pnl": 4537.8199307407085,
+              "fees": 3.784979917347708,
+              "net_pnl": 4534.034950823361,
+              "net_contribution_pp": 0.5624948324824891
+            },
+            "Industrials / Logistics": {
+              "gross_pnl": 4109.271119726294,
+              "fees": 3.653092619578871,
+              "net_pnl": 4105.618027106715,
+              "net_contribution_pp": 0.509345196815279
+            },
+            "Technology / Semiconductors": {
+              "gross_pnl": 5786.772726907646,
+              "fees": 3.094898796599897,
+              "net_pnl": 5783.6778281110455,
+              "net_contribution_pp": 0.717526204879657
+            },
+            "Technology / Software": {
+              "gross_pnl": 4684.148019778423,
+              "fees": 3.169628039421048,
+              "net_pnl": 4680.978391739002,
+              "net_contribution_pp": 0.5807247153745991
+            }
+          },
+          "max_abs_reconciliation_residual": 8.731149137020111e-11
+        },
+        "gap_session": {
+          "opening_nav": 976195.5711998213,
+          "net_pnl": -162641.7595174713,
+          "compound_window_return": -0.16660776212861914,
+          "sector": {
+            "Industrials": {
+              "gross_pnl": -63027.646583680544,
+              "fees": 0.0,
+              "net_pnl": -63027.646583680544,
+              "net_contribution_pp": -6.456456927602591
+            },
+            "Technology": {
+              "gross_pnl": -99614.11293379066,
+              "fees": 0.0,
+              "net_pnl": -99614.11293379066,
+              "net_contribution_pp": -10.204319285259313
+            }
+          },
+          "industry": {
+            "Industrials / Capital Goods": {
+              "gross_pnl": -33710.4141168072,
+              "fees": 0.0,
+              "net_pnl": -33710.4141168072,
+              "net_contribution_pp": -3.4532439104773287
+            },
+            "Industrials / Logistics": {
+              "gross_pnl": -29317.232466873345,
+              "fees": 0.0,
+              "net_pnl": -29317.232466873345,
+              "net_contribution_pp": -3.0032130171252627
+            },
+            "Technology / Semiconductors": {
+              "gross_pnl": -52620.13248591206,
+              "fees": 0.0,
+              "net_pnl": -52620.13248591206,
+              "net_contribution_pp": -5.390326901528325
+            },
+            "Technology / Software": {
+              "gross_pnl": -46993.9804478786,
+              "fees": 0.0,
+              "net_pnl": -46993.9804478786,
+              "net_contribution_pp": -4.813992383730987
+            }
+          },
+          "max_abs_reconciliation_residual": 1.1641532182693481e-10
+        }
+      },
+      "benchmark": {
+        "full": {
+          "opening_nav": 1000000.0,
+          "net_pnl": -78232.23339035874,
+          "compound_window_return": -0.07823223339035874,
+          "sector": {
+            "Industrials": {
+              "gross_pnl": -60716.728588873295,
+              "fees": 0.0,
+              "net_pnl": -60716.728588873295,
+              "net_contribution_pp": -6.07167285888733
+            },
+            "Technology": {
+              "gross_pnl": -17515.504801485462,
+              "fees": 0.0,
+              "net_pnl": -17515.504801485462,
+              "net_contribution_pp": -1.7515504801485462
+            }
+          },
+          "industry": {
+            "Industrials / Capital Goods": {
+              "gross_pnl": -32748.509839525595,
+              "fees": 0.0,
+              "net_pnl": -32748.509839525595,
+              "net_contribution_pp": -3.2748509839525597
+            },
+            "Industrials / Logistics": {
+              "gross_pnl": -27968.2187493477,
+              "fees": 0.0,
+              "net_pnl": -27968.2187493477,
+              "net_contribution_pp": -2.79682187493477
+            },
+            "Technology / Semiconductors": {
+              "gross_pnl": -12071.797715332066,
+              "fees": 0.0,
+              "net_pnl": -12071.797715332066,
+              "net_contribution_pp": -1.2071797715332067
+            },
+            "Technology / Software": {
+              "gross_pnl": -5443.707086153395,
+              "fees": 0.0,
+              "net_pnl": -5443.707086153395,
+              "net_contribution_pp": -0.5443707086153394
+            }
+          },
+          "max_abs_reconciliation_residual": 1.4551915228366852e-11
+        },
+        "rebound": {
+          "opening_nav": 787653.0585601695,
+          "net_pnl": 76263.08226259262,
+          "compound_window_return": 0.09682319065960539,
+          "sector": {
+            "Industrials": {
+              "gross_pnl": 33553.13746007887,
+              "fees": 0.0,
+              "net_pnl": 33553.13746007887,
+              "net_contribution_pp": 4.259887915805727
+            },
+            "Technology": {
+              "gross_pnl": 42709.9448025137,
+              "fees": 0.0,
+              "net_pnl": 42709.9448025137,
+              "net_contribution_pp": 5.422431150154805
+            }
+          },
+          "industry": {
+            "Industrials / Capital Goods": {
+              "gross_pnl": 17307.77108353904,
+              "fees": 0.0,
+              "net_pnl": 17307.77108353904,
+              "net_contribution_pp": 2.1973851171450614
+            },
+            "Industrials / Logistics": {
+              "gross_pnl": 16245.366376539832,
+              "fees": 0.0,
+              "net_pnl": 16245.366376539832,
+              "net_contribution_pp": 2.0625027986606663
+            },
+            "Technology / Semiconductors": {
+              "gross_pnl": 23186.811576135035,
+              "fees": 0.0,
+              "net_pnl": 23186.811576135035,
+              "net_contribution_pp": 2.9437848712884507
+            },
+            "Technology / Software": {
+              "gross_pnl": 19523.133226378668,
+              "fees": 0.0,
+              "net_pnl": 19523.133226378668,
+              "net_contribution_pp": 2.478646278866354
+            }
+          },
+          "max_abs_reconciliation_residual": 5.820766091346741e-11
+        },
+        "gap_session": {
+          "opening_nav": 977426.374879014,
+          "net_pnl": -161351.2283512021,
+          "compound_window_return": -0.1650776288609709,
+          "sector": {
+            "Industrials": {
+              "gross_pnl": -67157.13737293269,
+              "fees": 0.0,
+              "net_pnl": -67157.13737293269,
+              "net_contribution_pp": -6.87081289178895
+            },
+            "Technology": {
+              "gross_pnl": -94194.09097826944,
+              "fees": 0.0,
+              "net_pnl": -94194.09097826944,
+              "net_contribution_pp": -9.636949994308143
+            }
+          },
+          "industry": {
+            "Industrials / Capital Goods": {
+              "gross_pnl": -35883.092742920606,
+              "fees": 0.0,
+              "net_pnl": -35883.092742920606,
+              "net_contribution_pp": -3.671181141123005
+            },
+            "Industrials / Logistics": {
+              "gross_pnl": -31274.04463001208,
+              "fees": 0.0,
+              "net_pnl": -31274.04463001208,
+              "net_contribution_pp": -3.199631750665945
+            },
+            "Technology / Semiconductors": {
+              "gross_pnl": -49251.282292538606,
+              "fees": 0.0,
+              "net_pnl": -49251.282292538606,
+              "net_contribution_pp": -5.038873879235655
+            },
+            "Technology / Software": {
+              "gross_pnl": -44942.80868573083,
+              "fees": 0.0,
+              "net_pnl": -44942.80868573083,
+              "net_contribution_pp": -4.598076115072489
+            }
+          },
+          "max_abs_reconciliation_residual": 2.9103830456733704e-11
+        }
+      }
+    },
+    "false": {
+      "original": {
+        "full": {
+          "opening_nav": 1000000.0,
+          "net_pnl": -3527.2898918290157,
+          "compound_window_return": -0.003527289891829016,
+          "sector": {
+            "Industrials": {
+              "gross_pnl": 3944.846124765668,
+              "fees": 606.4423098262434,
+              "net_pnl": 3338.4038149394246,
+              "net_contribution_pp": 0.33384038149394246
+            },
+            "Technology": {
+              "gross_pnl": -6224.238582022197,
+              "fees": 641.4551247473009,
+              "net_pnl": -6865.693706769498,
+              "net_contribution_pp": -0.6865693706769499
+            }
+          },
+          "industry": {
+            "Industrials / Capital Goods": {
+              "gross_pnl": -3752.8571451548914,
+              "fees": 297.3382962398221,
+              "net_pnl": -4050.1954413947137,
+              "net_contribution_pp": -0.4050195441394714
+            },
+            "Industrials / Logistics": {
+              "gross_pnl": 7697.703269920559,
+              "fees": 309.10401358642133,
+              "net_pnl": 7388.599256334138,
+              "net_contribution_pp": 0.7388599256334138
+            },
+            "Technology / Semiconductors": {
+              "gross_pnl": -2069.2897699510327,
+              "fees": 318.6557320807091,
+              "net_pnl": -2387.945502031742,
+              "net_contribution_pp": -0.23879455020317417
+            },
+            "Technology / Software": {
+              "gross_pnl": -4154.948812071165,
+              "fees": 322.7993926665919,
+              "net_pnl": -4477.748204737757,
+              "net_contribution_pp": -0.44777482047377576
+            }
+          },
+          "max_abs_reconciliation_residual": 1.059106580214575e-09
+        },
+        "rebound": {
+          "opening_nav": 865335.4005525325,
+          "net_pnl": 70756.74493460357,
+          "compound_window_return": 0.08176799988700809,
+          "sector": {
+            "Industrials": {
+              "gross_pnl": 30288.93868430516,
+              "fees": 25.557185167950095,
+              "net_pnl": 30263.381499137213,
+              "net_contribution_pp": 3.4973007552694004
+            },
+            "Technology": {
+              "gross_pnl": 40518.94619060433,
+              "fees": 25.582755138103096,
+              "net_pnl": 40493.36343546623,
+              "net_contribution_pp": 4.679499233431392
+            }
+          },
+          "industry": {
+            "Industrials / Capital Goods": {
+              "gross_pnl": 17466.32635458634,
+              "fees": 13.972775876072934,
+              "net_pnl": 17452.353578710266,
+              "net_contribution_pp": 2.0168311116783872
+            },
+            "Industrials / Logistics": {
+              "gross_pnl": 12822.61232971882,
+              "fees": 11.584409291877163,
+              "net_pnl": 12811.027920426943,
+              "net_contribution_pp": 1.480469643591013
+            },
+            "Technology / Semiconductors": {
+              "gross_pnl": 21615.512324314077,
+              "fees": 10.86404541570443,
+              "net_pnl": 21604.648278898374,
+              "net_contribution_pp": 2.496679121772137
+            },
+            "Technology / Software": {
+              "gross_pnl": 18903.433866290252,
+              "fees": 14.718709722398664,
+              "net_pnl": 18888.715156567854,
+              "net_contribution_pp": 2.182820111659255
+            }
+          },
+          "max_abs_reconciliation_residual": 1.3096723705530167e-10
+        },
+        "relapse": {
+          "opening_nav": 936092.1454871361,
+          "net_pnl": -175209.2676411149,
+          "compound_window_return": -0.18717096226668706,
+          "sector": {
+            "Industrials": {
+              "gross_pnl": -80856.06716257246,
+              "fees": 0.0,
+              "net_pnl": -80856.06716257246,
+              "net_contribution_pp": -8.637618374684205
+            },
+            "Technology": {
+              "gross_pnl": -94353.20047854251,
+              "fees": 0.0,
+              "net_pnl": -94353.20047854251,
+              "net_contribution_pp": -10.07947785198451
+            }
+          },
+          "industry": {
+            "Industrials / Capital Goods": {
+              "gross_pnl": -44965.445783070536,
+              "fees": 0.0,
+              "net_pnl": -44965.445783070536,
+              "net_contribution_pp": -4.803527729598759
+            },
+            "Industrials / Logistics": {
+              "gross_pnl": -35890.62137950193,
+              "fees": 0.0,
+              "net_pnl": -35890.62137950193,
+              "net_contribution_pp": -3.8340906450854457
+            },
+            "Technology / Semiconductors": {
+              "gross_pnl": -47673.98731529852,
+              "fees": 0.0,
+              "net_pnl": -47673.98731529852,
+              "net_contribution_pp": -5.092873339994674
+            },
+            "Technology / Software": {
+              "gross_pnl": -46679.213163244,
+              "fees": 0.0,
+              "net_pnl": -46679.213163244,
+              "net_contribution_pp": -4.986604511989837
+            }
+          },
+          "max_abs_reconciliation_residual": 8.731149137020111e-11
+        }
+      },
+      "binary": {
+        "full": {
+          "opening_nav": 1000000.0,
+          "net_pnl": -1915.6377023883397,
+          "compound_window_return": -0.0019156377023883397,
+          "sector": {
+            "Industrials": {
+              "gross_pnl": 8381.228581075502,
+              "fees": 639.8341498263082,
+              "net_pnl": 7741.394431249194,
+              "net_contribution_pp": 0.7741394431249194
+            },
+            "Technology": {
+              "gross_pnl": -8955.057651027571,
+              "fees": 701.9744826103439,
+              "net_pnl": -9657.032133637915,
+              "net_contribution_pp": -0.9657032133637915
+            }
+          },
+          "industry": {
+            "Industrials / Capital Goods": {
+              "gross_pnl": -650.8045144126654,
+              "fees": 314.2934683914832,
+              "net_pnl": -965.0979828041486,
+              "net_contribution_pp": -0.09650979828041487
+            },
+            "Industrials / Logistics": {
+              "gross_pnl": 9032.033095488167,
+              "fees": 325.540681434825,
+              "net_pnl": 8706.492414053342,
+              "net_contribution_pp": 0.8706492414053342
+            },
+            "Technology / Semiconductors": {
+              "gross_pnl": -5809.305802949901,
+              "fees": 349.6899850063301,
+              "net_pnl": -6158.995787956231,
+              "net_contribution_pp": -0.6158995787956231
+            },
+            "Technology / Software": {
+              "gross_pnl": -3145.75184807767,
+              "fees": 352.2844976040138,
+              "net_pnl": -3498.0363456816835,
+              "net_contribution_pp": -0.3498036345681684
+            }
+          },
+          "max_abs_reconciliation_residual": 3.8107828004285693e-10
+        },
+        "rebound": {
+          "opening_nav": 924483.9806244604,
+          "net_pnl": 36780.32924588933,
+          "compound_window_return": 0.03978471235493486,
+          "sector": {
+            "Industrials": {
+              "gross_pnl": 15735.823762023538,
+              "fees": 19.981099143526393,
+              "net_pnl": 15715.842662880012,
+              "net_contribution_pp": 1.6999583543096597
+            },
+            "Technology": {
+              "gross_pnl": 21072.163631910495,
+              "fees": 7.677048901138333,
+              "net_pnl": 21064.486583009355,
+              "net_contribution_pp": 2.27851288118383
+            }
+          },
+          "industry": {
+            "Industrials / Capital Goods": {
+              "gross_pnl": 9094.566350456735,
+              "fees": 10.2775338836581,
+              "net_pnl": 9084.288816573076,
+              "net_contribution_pp": 0.9826334481682332
+            },
+            "Industrials / Logistics": {
+              "gross_pnl": 6641.257411566802,
+              "fees": 9.703565259868293,
+              "net_pnl": 6631.553846306934,
+              "net_contribution_pp": 0.7173249061414266
+            },
+            "Technology / Semiconductors": {
+              "gross_pnl": 11267.988732007163,
+              "fees": 3.504427488556219,
+              "net_pnl": 11264.484304518606,
+              "net_contribution_pp": 1.2184618166027923
+            },
+            "Technology / Software": {
+              "gross_pnl": 9804.174899903333,
+              "fees": 4.172621412582114,
+              "net_pnl": 9800.00227849075,
+              "net_contribution_pp": 1.0600510645810381
+            }
+          },
+          "max_abs_reconciliation_residual": 4.3655745685100555e-11
+        },
+        "relapse": {
+          "opening_nav": 961264.3098703497,
+          "net_pnl": -92441.44658421096,
+          "compound_window_return": -0.0961665232288495,
+          "sector": {
+            "Industrials": {
+              "gross_pnl": -42660.13958193356,
+              "fees": 0.0,
+              "net_pnl": -42660.13958193356,
+              "net_contribution_pp": -4.437919846175017
+            },
+            "Technology": {
+              "gross_pnl": -49781.307002277455,
+              "fees": 0.0,
+              "net_pnl": -49781.307002277455,
+              "net_contribution_pp": -5.178732476709938
+            }
+          },
+          "industry": {
+            "Industrials / Capital Goods": {
+              "gross_pnl": -23724.035323320633,
+              "fees": 0.0,
+              "net_pnl": -23724.035323320633,
+              "net_contribution_pp": -2.468003345148683
+            },
+            "Industrials / Logistics": {
+              "gross_pnl": -18936.10425861293,
+              "fees": 0.0,
+              "net_pnl": -18936.10425861293,
+              "net_contribution_pp": -1.969916501026334
+            },
+            "Technology / Semiconductors": {
+              "gross_pnl": -25153.077866238127,
+              "fees": 0.0,
+              "net_pnl": -25153.077866238127,
+              "net_contribution_pp": -2.616666156015991
+            },
+            "Technology / Software": {
+              "gross_pnl": -24628.22913603933,
+              "fees": 0.0,
+              "net_pnl": -24628.22913603933,
+              "net_contribution_pp": -2.5620663206939467
+            }
+          },
+          "max_abs_reconciliation_residual": 5.820766091346741e-11
+        }
+      },
+      "tiered": {
+        "full": {
+          "opening_nav": 1000000.0,
+          "net_pnl": -67826.02653181273,
+          "compound_window_return": -0.06782602653181273,
+          "sector": {
+            "Industrials": {
+              "gross_pnl": -19143.3076026746,
+              "fees": 820.6272285298422,
+              "net_pnl": -19963.934831204442,
+              "net_contribution_pp": -1.9963934831204442
+            },
+            "Technology": {
+              "gross_pnl": -46996.01716868015,
+              "fees": 866.0745319289032,
+              "net_pnl": -47862.09170060905,
+              "net_contribution_pp": -4.786209170060905
+            }
+          },
+          "industry": {
+            "Industrials / Capital Goods": {
+              "gross_pnl": -14703.954052961928,
+              "fees": 405.31580399379067,
+              "net_pnl": -15109.269856955718,
+              "net_contribution_pp": -1.5109269856955718
+            },
+            "Industrials / Logistics": {
+              "gross_pnl": -4439.353549712672,
+              "fees": 415.31142453605156,
+              "net_pnl": -4854.664974248723,
+              "net_contribution_pp": -0.48546649742487236
+            },
+            "Technology / Semiconductors": {
+              "gross_pnl": -26851.11668920956,
+              "fees": 432.92364844753195,
+              "net_pnl": -27284.040337657094,
+              "net_contribution_pp": -2.7284040337657096
+            },
+            "Technology / Software": {
+              "gross_pnl": -20144.900479470587,
+              "fees": 433.15088348137124,
+              "net_pnl": -20578.05136295196,
+              "net_contribution_pp": -2.0578051362951957
+            }
+          },
+          "max_abs_reconciliation_residual": 7.566995918750763e-10
+        },
+        "rebound": {
+          "opening_nav": 904667.7564717112,
+          "net_pnl": 36250.92304421123,
+          "compound_window_return": 0.04007097941192601,
+          "sector": {
+            "Industrials": {
+              "gross_pnl": 15450.538187871476,
+              "fees": 18.337932557142835,
+              "net_pnl": 15432.200255314334,
+              "net_contribution_pp": 1.705841746311525
+            },
+            "Technology": {
+              "gross_pnl": 20829.941698527233,
+              "fees": 11.218909630367671,
+              "net_pnl": 20818.722788896866,
+              "net_contribution_pp": 2.301256194881072
+            }
+          },
+          "industry": {
+            "Industrials / Capital Goods": {
+              "gross_pnl": 8935.352852153772,
+              "fees": 9.259440439263585,
+              "net_pnl": 8926.093411714508,
+              "net_contribution_pp": 0.9866708908171002
+            },
+            "Industrials / Logistics": {
+              "gross_pnl": 6515.185335717705,
+              "fees": 9.07849211787925,
+              "net_pnl": 6506.106843599826,
+              "net_contribution_pp": 0.7191708554944249
+            },
+            "Technology / Semiconductors": {
+              "gross_pnl": 11155.89235417838,
+              "fees": 5.49312866003334,
+              "net_pnl": 11150.399225518348,
+              "net_contribution_pp": 1.2325408024937183
+            },
+            "Technology / Software": {
+              "gross_pnl": 9674.049344348854,
+              "fees": 5.7257809703343305,
+              "net_pnl": 9668.323563378519,
+              "net_contribution_pp": 1.0687153923873538
+            }
+          },
+          "max_abs_reconciliation_residual": 2.9103830456733704e-11
+        },
+        "relapse": {
+          "opening_nav": 940918.6795159224,
+          "net_pnl": -70575.89013918594,
+          "compound_window_return": -0.07500742803352076,
+          "sector": {
+            "Industrials": {
+              "gross_pnl": -32783.83495052748,
+              "fees": 56.8222241234877,
+              "net_pnl": -32840.65717465097,
+              "net_contribution_pp": -3.490275821875129
+            },
+            "Technology": {
+              "gross_pnl": -37686.43745299915,
+              "fees": 48.79551153581415,
+              "net_pnl": -37735.23296453496,
+              "net_contribution_pp": -4.010466981476947
+            }
+          },
+          "industry": {
+            "Industrials / Capital Goods": {
+              "gross_pnl": -18169.675477223514,
+              "fees": 28.340086559018797,
+              "net_pnl": -18198.015563782534,
+              "net_contribution_pp": -1.934068900953792
+            },
+            "Industrials / Logistics": {
+              "gross_pnl": -14614.159473303964,
+              "fees": 28.482137564468903,
+              "net_pnl": -14642.641610868433,
+              "net_contribution_pp": -1.5562069209213363
+            },
+            "Technology / Semiconductors": {
+              "gross_pnl": -19048.906587208556,
+              "fees": 24.47835686009663,
+              "net_pnl": -19073.384944068654,
+              "net_contribution_pp": -2.027102379759471
+            },
+            "Technology / Software": {
+              "gross_pnl": -18637.530865790595,
+              "fees": 24.31715467571752,
+              "net_pnl": -18661.848020466314,
+              "net_contribution_pp": -1.9833646017174766
+            }
+          },
+          "max_abs_reconciliation_residual": 0.0
+        }
+      },
+      "benchmark": {
+        "full": {
+          "opening_nav": 1000000.0,
+          "net_pnl": -4551.765977135394,
+          "compound_window_return": -0.004551765977135394,
+          "sector": {
+            "Industrials": {
+              "gross_pnl": 9228.322341654759,
+              "fees": 0.0,
+              "net_pnl": 9228.322341654759,
+              "net_contribution_pp": 0.9228322341654759
+            },
+            "Technology": {
+              "gross_pnl": -13780.08831878993,
+              "fees": 0.0,
+              "net_pnl": -13780.08831878993,
+              "net_contribution_pp": -1.3780088318789931
+            }
+          },
+          "industry": {
+            "Industrials / Capital Goods": {
+              "gross_pnl": -644.2757231637595,
+              "fees": 0.0,
+              "net_pnl": -644.2757231637595,
+              "net_contribution_pp": -0.06442757231637594
+            },
+            "Industrials / Logistics": {
+              "gross_pnl": 9872.598064818518,
+              "fees": 0.0,
+              "net_pnl": 9872.598064818518,
+              "net_contribution_pp": 0.9872598064818517
+            },
+            "Technology / Semiconductors": {
+              "gross_pnl": -5957.096288516984,
+              "fees": 0.0,
+              "net_pnl": -5957.096288516984,
+              "net_contribution_pp": -0.5957096288516983
+            },
+            "Technology / Software": {
+              "gross_pnl": -7822.992030272946,
+              "fees": 0.0,
+              "net_pnl": -7822.992030272946,
+              "net_contribution_pp": -0.7822992030272946
+            }
+          },
+          "max_abs_reconciliation_residual": 2.219167072325945e-10
+        },
+        "rebound": {
+          "opening_nav": 868400.1702193052,
+          "net_pnl": 70745.08862171962,
+          "compound_window_return": 0.0814660004083759,
+          "sector": {
+            "Industrials": {
+              "gross_pnl": 30706.45311495776,
+              "fees": 0.0,
+              "net_pnl": 30706.45311495776,
+              "net_contribution_pp": 3.535979628746868
+            },
+            "Technology": {
+              "gross_pnl": 40038.63550676171,
+              "fees": 0.0,
+              "net_pnl": 40038.63550676171,
+              "net_contribution_pp": 4.610620412090705
+            }
+          },
+          "industry": {
+            "Industrials / Capital Goods": {
+              "gross_pnl": 17412.870557071234,
+              "fees": 0.0,
+              "net_pnl": 17412.870557071234,
+              "net_contribution_pp": 2.0051666448515086
+            },
+            "Industrials / Logistics": {
+              "gross_pnl": 13293.582557886528,
+              "fees": 0.0,
+              "net_pnl": 13293.582557886528,
+              "net_contribution_pp": 1.5308129838953595
+            },
+            "Technology / Semiconductors": {
+              "gross_pnl": 20994.10689424093,
+              "fees": 0.0,
+              "net_pnl": 20994.10689424093,
+              "net_contribution_pp": 2.4175613518061714
+            },
+            "Technology / Software": {
+              "gross_pnl": 19044.52861252078,
+              "fees": 0.0,
+              "net_pnl": 19044.52861252078,
+              "net_contribution_pp": 2.193059060284533
+            }
+          },
+          "max_abs_reconciliation_residual": 1.6007106751203537e-10
+        },
+        "relapse": {
+          "opening_nav": 939145.2588410248,
+          "net_pnl": -176062.59995643806,
+          "compound_window_return": -0.18747110556008387,
+          "sector": {
+            "Industrials": {
+              "gross_pnl": -79468.25495078828,
+              "fees": 0.0,
+              "net_pnl": -79468.25495078828,
+              "net_contribution_pp": -8.461763950004713
+            },
+            "Technology": {
+              "gross_pnl": -96594.3450056497,
+              "fees": 0.0,
+              "net_pnl": -96594.3450056497,
+              "net_contribution_pp": -10.285346606003667
+            }
+          },
+          "industry": {
+            "Industrials / Capital Goods": {
+              "gross_pnl": -43385.12929022786,
+              "fees": 0.0,
+              "net_pnl": -43385.12929022786,
+              "net_contribution_pp": -4.619639920641067
+            },
+            "Industrials / Logistics": {
+              "gross_pnl": -36083.125660560414,
+              "fees": 0.0,
+              "net_pnl": -36083.125660560414,
+              "net_contribution_pp": -3.842124029363645
+            },
+            "Technology / Semiconductors": {
+              "gross_pnl": -47774.694628859404,
+              "fees": 0.0,
+              "net_pnl": -47774.694628859404,
+              "net_contribution_pp": -5.087039963106126
+            },
+            "Technology / Software": {
+              "gross_pnl": -48819.65037679029,
+              "fees": 0.0,
+              "net_pnl": -48819.65037679029,
+              "net_contribution_pp": -5.198306642897539
+            }
+          },
+          "max_abs_reconciliation_residual": 8.731149137020111e-11
+        }
+      }
+    }
+  }
+}

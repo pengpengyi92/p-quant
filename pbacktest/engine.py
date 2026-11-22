@@ -30,6 +30,7 @@ class Fill:
 class AssetMark:
     gross_pnl: float
     fee: float
+    overnight_pnl: float = 0.
 
 
 @dataclass
@@ -64,12 +65,13 @@ def _valid_target(w, names):
 
 
 def run_backtest(returns, targets, *, initial_nav=1_000_000.0, cost_bps=5.0,
-                 target_policy=None, track_attribution=False):
+                 target_policy=None, track_attribution=False, overnight=None):
     """Execute targets issued at t-1 before applying return for session t.
 
-    Index 0 is the starting mark; returns[0] is session 1 close-to-close.
-    The toy open is the previous close (no gaps). The engine doesn't use a
-    session's realized returns when calculating its opening trades.
+    Index 0 is the starting mark. With no overnight panel, the toy open equals
+    the last close. Otherwise pre-existing holdings take the close-to-open
+    return first; returns supplies open-to-close returns. A target submitted
+    on yesterday's close is sized at the realized open, not at the stale close.
     A policy receives only the decision ID, prior close NAV and scheduled target.
     """
     if not returns or not returns[0] or not isfinite(initial_nav) or initial_nav <= 0:
@@ -79,6 +81,8 @@ def run_backtest(returns, targets, *, initial_nav=1_000_000.0, cost_bps=5.0,
     assets = sorted(returns[0])
     names = set(assets)
     n = len(returns)
+    if overnight is not None and len(overnight) != n:
+        raise ValueError("overnight panel must match the session panel")
     for t, w in targets.items():
         if type(t) is not int or not 0 <= t < n or not _valid_target(w,names):
             raise ValueError("invalid target date, instrument or long-only weight")
@@ -90,14 +94,23 @@ def run_backtest(returns, targets, *, initial_nav=1_000_000.0, cost_bps=5.0,
     for t, day in enumerate(returns, 1):
         if set(day) != names or any(not isfinite(x) or x <= -1 for x in day.values()):
             raise ValueError("invalid or missing asset return")
-        nav_at_open = nav
+        prior_nav = nav
         buys = sells = fees = 0.0
         target = targets.get(t - 1)
         fee_by_asset = dict.fromkeys(assets,0.) if track_attribution else None
         if target_policy is not None:
-            target = target_policy(t-1, nav_at_open, None if target is None else dict(target))
+            target = target_policy(t-1, prior_nav, None if target is None else dict(target))
             if target is not None and not _valid_target(target,names):
                 raise ValueError("policy returned invalid long-only weights")
+        gap_pnl = None
+        if overnight is not None:
+            gap = overnight[t-1]
+            if set(gap) != names or any(not isfinite(x) or x <= -1 for x in gap.values()):
+                raise ValueError("invalid or missing overnight return")
+            gap_pnl = {a:pos[a]*gap[a] for a in assets}
+            pos = {a:pos[a]+gap_pnl[a] for a in assets}
+            nav = cash + fsum(pos.values())
+        nav_at_open = nav
         if target is not None:
             w = {a: target.get(a, 0.0) for a in assets}
             weights_sum = fsum(w.values())
@@ -122,11 +135,13 @@ def run_backtest(returns, targets, *, initial_nav=1_000_000.0, cost_bps=5.0,
             cash = max(cash, 0.0)
             pos = next_pos
         if track_attribution:
-            marks.append({a:AssetMark(pos[a]*day[a],fee_by_asset[a]) for a in assets})
+            overnight_marks = gap_pnl if gap_pnl is not None else dict.fromkeys(assets,0.)
+            marks.append({a:AssetMark(pos[a]*day[a]+overnight_marks[a],
+                                      fee_by_asset[a],overnight_marks[a]) for a in assets})
         pos = {a: pos[a] * (1 + day[a]) for a in assets}
         nav = cash + fsum(pos.values())
         if not isfinite(nav) or nav <= 0:
             raise ArithmeticError("insolvency or nonfinite equity")
-        rows.append(Session(t, nav, cash, nav / nav_at_open - 1, fees, buys, sells,
+        rows.append(Session(t, nav, cash, nav / prior_nav - 1, fees, buys, sells,
                             (buys + sells) / nav_at_open))
     return Run(float(initial_nav), rows, fills, marks)

@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "title": "PWOL synthetic comparison of tiered drawdown controls",
+  "author": "Pengyi Peng",
+  "frozen_at": "2026-11-22T17:11:15+08:00",
+  "scope": "SYNTHETIC_ONLY_NO_TRADE",
+  "calibration": "NONE; no seed selection, return targets, threshold sweeps or outcome-driven changes",
+  "market_data": false,
+  "execution_authorized": false,
+  "samples": {
+    "sessions": 252, "initial_nav": 1000000, "cost_bps": 5, "sensitivity_bps": 15,
+    "rebalance_every": 21, "sector_a_even": 0.535, "sector_a_odd": 0.465,
+    "benchmark": "Common fee-free buy-and-hold, initially 25% of each synthetic asset; each scenario has its own single matched benchmark"
+  },
+  "binary": {
+    "reduce_on_drawdown": 0.08, "restore_within_drawdown": 0.04,
+    "reduced_target": 0.50, "minimum_completed_sessions": 5
+  },
+  "tiered": {
+    "exposures": [1.00, 0.75, 0.50, 0.25],
+    "enter": [0.06, 0.10, 0.16], "exit": [0.04, 0.08, 0.12],
+    "min_completed": 3, "confirm_closes": 2
+  },
+  "decision": "Own net prior close NAV against own known peak. Downward jumps may skip tiers; restore at most one tier per decision, after minimum completed sessions since any switch and consecutive qualifying closes at that tier. Mark gaps before trades; no input from the new open or from scoring windows to the risk rule.",
+  "success": {
+    "min_fraction_binary_drawdown_improvement": 0.8,
+    "basis": "Per scenario and per fee rate: positive MDD improvement versus original and at least 80% of any positive binary improvement; strictly higher net rebound-window return than binary. Terminal return, turnover and fees reported separately."
+  },
+  "shocks": {
+    "base_log_drift": 0.00025, "market_sigma": 0.005, "sector_sigma": 0.0014, "industry_sigma": 0.0015
+  },
+  "assets": {
+    "SYN_SOFTWARE": {"sector": "Technology", "industry": "Software", "loading": 1.12},
+    "SYN_SEMICONDUCTORS": {"sector": "Technology", "industry": "Semiconductors", "loading": 1.27},
+    "SYN_LOGISTICS": {"sector": "Industrials", "industry": "Logistics", "loading": 0.78},
+    "SYN_CAPITAL_GOODS": {"sector": "Industrials", "industry": "Capital Goods", "loading": 0.92}
+  },
+  "cases": {
+    "new_v": {
+      "label": "Fast V rebound", "seed": 731411,
+      "intraday_shifts": [[58, 66, -0.024], [67, 86, 0.016]],
+      "overnight_gaps": {}, "rebound_window": [67, 86]
+    },
+    "gap": {
+      "label": "Overnight gap", "seed": 731412,
+      "intraday_shifts": [[99, 101, -0.018], [102, 121, 0.005]],
+      "overnight_gaps": {"99": -0.165}, "rebound_window": [102, 121]
+    },
+    "false": {
+      "label": "False rebound", "seed": 731413,
+      "intraday_shifts": [[135, 145, -0.017], [146, 151, 0.018], [152, 167, -0.014], [168, 197, 0.007]],
+      "overnight_gaps": {}, "rebound_window": [146, 151], "relapse_window": [152, 167]
+    }
+  }
+}

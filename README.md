@@ -21,6 +21,8 @@
 
 [回撤降仓与行业归因](project/pwol-drawdown-guard/README.md)：暴跌、阴跌、V 形三种未校准情景；同时记录少回撤和少赚反弹。
 
+[分档降仓与分步恢复](project/pwol-tiered-drawdown/README.md)：新 V 形、跳空、假反弹；三版同基准、两档费用、板块和行业对账。
+
 **快速开始：**画 GitHub 流程图看 [Mermaid](repo/diagrams.md)，画净值/回撤先看 [Matplotlib 或 Plotly](repo/visualization.md)，想批量研究信号、比事件引擎或核对盘口模拟看 [回测工具目录](repo/backtesting.md)。优先读[首期选型报告](report/2026-11-22-diagram-and-backtesting-tools.md)。
 
 本仓用于公开研究教育与技术索引。只录入上游链接、原创说明和合成例子；不存受限行情、不收私有材料、也不提供交易接入。[贡献方式](CONTRIBUTING.md) · [计划](TODO.md) · [Benchmark Card](BENCHMARK_CARD.md)。
