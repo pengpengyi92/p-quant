@@ -2,7 +2,7 @@
 from math import fsum,isclose
 
 
-def partition_contributions(run, taxonomy, start=1, end=None):
+def partition_contributions(run, taxonomy, start=1, end=None, *, costs_by_type=False):
     """Net P&L / opening capital at window start, not standalone sector return."""
     end = len(run.sessions) if end is None else end
     if run.asset_marks is None or not (1<=start<=end<=len(run.sessions)):
@@ -17,7 +17,12 @@ def partition_contributions(run, taxonomy, start=1, end=None):
         for group,key in ((sectors,sector),(industries,sector+" / "+industry)):
             p=group.setdefault(key,{"gross_pnl":0.,"fees":0.})
             p["gross_pnl"]+=fsum(row[asset].gross_pnl for row in marked)
-            p["fees"]+=fsum(row[asset].fee for row in marked)
+            commission=fsum(row[asset].fee for row in marked)
+            slippage=fsum(row[asset].slippage for row in marked)
+            p["fees"]+=commission+slippage
+            if costs_by_type:
+                p["commission"]=p.get("commission",0.)+commission
+                p["slippage"]=p.get("slippage",0.)+slippage
     for grouping in (sectors,industries):
         for p in grouping.values():
             p["net_pnl"]=p["gross_pnl"]-p["fees"]

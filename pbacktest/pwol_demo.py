@@ -108,7 +108,9 @@ def execute(fixture, output):
         '  '+json.dumps(row,allow_nan=False,separators=(",",":")) for row in rows
     ) + '\n]}\n'
     (output/"series.json").write_bytes(block.encode("utf-8"))
-    (output/"fills.json").write_bytes(stable_json({"scope":spec["scope"],"rows":[asdict(f) for f in run.fills]}))
+    # Preserve the versioned no-slippage fixture's five-field fill format.
+    fills = [{k:v for k,v in asdict(f).items() if k!="slippage"} for f in run.fills]
+    (output/"fills.json").write_bytes(stable_json({"scope":spec["scope"],"rows":fills}))
     print(json.dumps({k:metrics[k] for k in ("total_return","sharpe","max_drawdown",
                                             "gross_turnover_excluding_open","total_fees")},indent=2))
 

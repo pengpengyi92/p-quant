@@ -24,6 +24,7 @@ class Fill:
     asset: str
     signed_notional: float
     fee: float
+    slippage: float = 0.
 
 
 @dataclass(frozen=True)
@@ -31,6 +32,7 @@ class AssetMark:
     gross_pnl: float
     fee: float
     overnight_pnl: float = 0.
+    slippage: float = 0.
 
 
 @dataclass
@@ -44,14 +46,17 @@ class Run:
         return [asdict(row) for row in self.sessions]
 
 
-def _target_value(nav, positions, weights, fee_rate):
-    """Solve value + fee rate times gross turnover = value before trade."""
-    if fee_rate == 0:
+def _target_value(nav, positions, weights, fee_rate, slip_rates=None):
+    """Solve investable value plus execution charges equals pre-trade open NAV."""
+    if fee_rate == 0 and slip_rates is None:
         return nav
     left, right = 0.0, nav
     for _ in range(52):
         mid = (left + right) / 2
-        fees = fee_rate * fsum(abs(mid * weights[a] - positions[a]) for a in positions)
+        if slip_rates is None:
+            fees = fee_rate * fsum(abs(mid * weights[a] - positions[a]) for a in positions)
+        else:
+            fees = fsum((fee_rate+slip_rates[a])*abs(mid*weights[a]-positions[a]) for a in positions)
         if mid + fees > nav:
             right = mid
         else:
@@ -65,7 +70,8 @@ def _valid_target(w, names):
 
 
 def run_backtest(returns, targets, *, initial_nav=1_000_000.0, cost_bps=5.0,
-                 target_policy=None, track_attribution=False, overnight=None):
+                 target_policy=None, track_attribution=False, overnight=None,
+                 base_slippage_bps=0., gap_bps_per_pct=0., gap_cap_bps=0.):
     """Execute targets issued at t-1 before applying return for session t.
 
     Index 0 is the starting mark. With no overnight panel, the toy open equals
@@ -73,11 +79,17 @@ def run_backtest(returns, targets, *, initial_nav=1_000_000.0, cost_bps=5.0,
     return first; returns supplies open-to-close returns. A target submitted
     on yesterday's close is sized at the realized open, not at the stale close.
     A policy receives only the decision ID, prior close NAV and scheduled target.
+    Optional slippage is an adverse execution-price equivalent cash charge per
+    marked notional: base bps plus a capped surcharge set by the observed gap.
     """
     if not returns or not returns[0] or not isfinite(initial_nav) or initial_nav <= 0:
         raise ValueError("need positive initial NAV and a nonempty return panel")
     if not isfinite(cost_bps) or not 0 <= cost_bps < 1000:
         raise ValueError("cost_bps must be in [0, 1000)")
+    if (not all(isfinite(x) and x>=0 for x in (base_slippage_bps,gap_bps_per_pct,gap_cap_bps))
+            or cost_bps+base_slippage_bps+gap_cap_bps>=1000):
+        raise ValueError("invalid execution slippage schedule")
+    charge_slip = base_slippage_bps>0 or (gap_bps_per_pct>0 and gap_cap_bps>0)
     assets = sorted(returns[0])
     names = set(assets)
     n = len(returns)
@@ -95,14 +107,15 @@ def run_backtest(returns, targets, *, initial_nav=1_000_000.0, cost_bps=5.0,
         if set(day) != names or any(not isfinite(x) or x <= -1 for x in day.values()):
             raise ValueError("invalid or missing asset return")
         prior_nav = nav
-        buys = sells = fees = 0.0
+        buys = sells = fees = slipped = 0.0
         target = targets.get(t - 1)
         fee_by_asset = dict.fromkeys(assets,0.) if track_attribution else None
+        slip_by_asset = dict.fromkeys(assets,0.) if track_attribution else None
         if target_policy is not None:
             target = target_policy(t-1, prior_nav, None if target is None else dict(target))
             if target is not None and not _valid_target(target,names):
                 raise ValueError("policy returned invalid long-only weights")
-        gap_pnl = None
+        gap_pnl = gap = None
         if overnight is not None:
             gap = overnight[t-1]
             if set(gap) != names or any(not isfinite(x) or x <= -1 for x in gap.values()):
@@ -117,19 +130,27 @@ def run_backtest(returns, targets, *, initial_nav=1_000_000.0, cost_bps=5.0,
             if weights_sum > 1:  # only a floating-point remainder is permitted
                 w = {a: x / weights_sum for a,x in w.items()}
                 weights_sum = 1.
-            free_nav = _target_value(nav, pos, w, fee_rate)
+            slip_rates = None
+            if charge_slip:
+                slip_rates = {a:(base_slippage_bps
+                                 +min(gap_cap_bps,100*gap_bps_per_pct*abs(gap[a] if gap else 0.)))/10_000
+                              for a in assets}
+            free_nav = _target_value(nav, pos, w, fee_rate, slip_rates)
             next_pos = {a: free_nav * w[a] for a in assets}
             for a in assets:
                 delta = next_pos[a] - pos[a]
                 if delta:
                     fill_fee = abs(delta) * fee_rate
-                    fills.append(Fill(t - 1, t, a, delta, fill_fee))
+                    adverse = abs(delta)*slip_rates[a] if slip_rates is not None else 0.
+                    fills.append(Fill(t - 1, t, a, delta, fill_fee, adverse))
                     buys += max(delta, 0)
                     sells += max(-delta, 0)
                     fees += fill_fee
+                    slipped += adverse
                     if track_attribution:
                         fee_by_asset[a] = fill_fee
-            cash -= buys - sells + fees
+                        slip_by_asset[a] = adverse
+            cash -= buys - sells + fees + slipped
             if not abs(cash - free_nav * (1 - weights_sum)) < 1e-9 * nav_at_open:
                 raise ArithmeticError("cash must fund trades and fees")
             cash = max(cash, 0.0)
@@ -137,7 +158,7 @@ def run_backtest(returns, targets, *, initial_nav=1_000_000.0, cost_bps=5.0,
         if track_attribution:
             overnight_marks = gap_pnl if gap_pnl is not None else dict.fromkeys(assets,0.)
             marks.append({a:AssetMark(pos[a]*day[a]+overnight_marks[a],
-                                      fee_by_asset[a],overnight_marks[a]) for a in assets})
+                                      fee_by_asset[a],overnight_marks[a],slip_by_asset[a]) for a in assets})
         pos = {a: pos[a] * (1 + day[a]) for a in assets}
         nav = cash + fsum(pos.values())
         if not isfinite(nav) or nav <= 0:

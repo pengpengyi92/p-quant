@@ -1,0 +1,207 @@
+{
+  "version": 1,
+  "title": "PWOL drawdown controls on a frozen 64-path synthetic batch",
+  "author": "Pengyi Peng",
+  "frozen_at": "2026-11-22T17:23:08+08:00",
+  "scope": "SYNTHETIC_ONLY_NO_TRADE",
+  "market_data": false,
+  "execution_authorized": false,
+  "calibration": "NONE; first 16 consecutive seeds per fixed offset; no filtering, fitting or retries based on results.",
+  "baseline_sha256": "b97dfc6953d1385755dcba30e0f8820b9747375de5b365ec98cc11b48197250c",
+  "sessions": 252,
+  "initial_nav": 1000000,
+  "seed_design": {
+    "start": 831601,
+    "count_per_family": 16,
+    "offsets": [
+      0,
+      100,
+      200,
+      300
+    ],
+    "magnitude_min": 0.8,
+    "magnitude_max": 1.2,
+    "clock_shift_max": 8,
+    "structure_rng_xor": 27351
+  },
+  "profiles": {
+    "primary": {
+      "commission_bps": 5,
+      "base_slippage_bps": 6,
+      "gap_bps_per_pct": 2,
+      "gap_cap_bps": 35
+    },
+    "stress": {
+      "commission_bps": 5,
+      "base_slippage_bps": 15,
+      "gap_bps_per_pct": 4,
+      "gap_cap_bps": 60
+    }
+  },
+  "benchmark": "Same synthetic four assets, equal initial buy and hold, no charges; one matched benchmark per seed reused for all variants and profiles.",
+  "costs": "Both sides pay commission plus slippage = base bps + min(gap cap bps, gap bps per pct times 100*abs(asset close-to-open return)). Sizing uses the simulated open only, after the target is decided; costs debit cash at the mark, and future intraday moves never set slippage. This is not an order book model.",
+  "gate": {
+    "min_binary_dd_fraction": 0.8,
+    "max_full_period_shortfall_pp": 0,
+    "min_joint_fraction_each_family": 0.5,
+    "mdd_eps_pp": 1e-9,
+    "short_rule": "Tiered MDD improvement vs original is positive and at least 80% of any positive binary improvement. Tiered compounded return across all fixed rebound legs is strictly higher than binary.",
+    "full_rule": "Primary joint requires the short rule plus tiered full-period net return no worse than binary. Research promotion requires at least 50% full-joint in every family and no worse batch worst MDD than binary, at both cost profiles. Not deployment authorization."
+  },
+  "windows": "Segments fixed before any simulation; apply deterministic common jitter. Rebound score compounds returns across only declared rebound legs (no intervening sessions); always report continuous full-period NAV independently. Asset contribution is reported per leg and full period, not summed across overlapping bases.",
+  "families": {
+    "fast_v": {
+      "label": "Fast V control",
+      "intraday_shifts": [
+        [
+          60,
+          69,
+          -0.022
+        ],
+        [
+          70,
+          91,
+          0.013
+        ]
+      ],
+      "overnight_gaps": {},
+      "rebound_legs": [
+        [
+          70,
+          91
+        ]
+      ]
+    },
+    "gap_chain": {
+      "label": "Consecutive gaps",
+      "intraday_shifts": [
+        [
+          64,
+          72,
+          -0.009
+        ],
+        [
+          73,
+          92,
+          0.008
+        ]
+      ],
+      "overnight_gaps": {
+        "67": -0.08,
+        "68": -0.057,
+        "69": -0.041
+      },
+      "rebound_legs": [
+        [
+          73,
+          92
+        ]
+      ]
+    },
+    "fake_cycles": {
+      "label": "Repeated false rebounds",
+      "intraday_shifts": [
+        [
+          106,
+          113,
+          -0.023
+        ],
+        [
+          114,
+          119,
+          0.018
+        ],
+        [
+          120,
+          127,
+          -0.024
+        ],
+        [
+          128,
+          132,
+          0.017
+        ],
+        [
+          133,
+          144,
+          -0.016
+        ],
+        [
+          145,
+          169,
+          0.01
+        ]
+      ],
+      "overnight_gaps": {},
+      "rebound_legs": [
+        [
+          114,
+          119
+        ],
+        [
+          128,
+          132
+        ],
+        [
+          145,
+          169
+        ]
+      ]
+    },
+    "combined": {
+      "label": "Gaps + false rebounds",
+      "intraday_shifts": [
+        [
+          70,
+          75,
+          -0.015
+        ],
+        [
+          76,
+          81,
+          0.016
+        ],
+        [
+          82,
+          88,
+          -0.011
+        ],
+        [
+          89,
+          94,
+          0.014
+        ],
+        [
+          95,
+          105,
+          -0.015
+        ],
+        [
+          106,
+          133,
+          0.008
+        ]
+      ],
+      "overnight_gaps": {
+        "73": -0.055,
+        "74": -0.047,
+        "83": -0.052,
+        "84": -0.031
+      },
+      "rebound_legs": [
+        [
+          76,
+          81
+        ],
+        [
+          89,
+          94
+        ],
+        [
+          106,
+          133
+        ]
+      ]
+    }
+  }
+}

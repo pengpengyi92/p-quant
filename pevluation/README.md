@@ -1,5 +1,7 @@
 # pevluation 组合评估计算
 
+[多种子评估与独立 SQL 对账](../project/pwol-drawdown-batch/README.md)从原始成交和资产盯市复算回撤、双边换手、佣金、滑点、窗口收益及两级归因；用全期门槛区分短窗通过与整体通过。
+
 [`tier_review` 对照](../project/pwol-tiered-drawdown/README.md)按预设门槛评估最大回撤保存比例和费后反弹增量，另报全期差额、换手与费用；两级归因沿用可与净值对账的资产损益。
 
 按指定的目录名 `pevluation` 维护指标定义和计算。`metrics.evaluate` 从净回报、NAV 和成交账本得出结果；图表读这些结果，不再实现另一套 Sharpe 或回撤公式。

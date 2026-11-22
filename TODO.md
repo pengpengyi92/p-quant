@@ -5,7 +5,8 @@
 - [x] P1：[新增合成基准和未按收益校准的下跌压力](project/pwol-benchmark-stress/README.md)，完成相对指标与绘图，保留跑输结果。
 - [x] P1：[冻结三条无拟合路径，回测降仓与板块/行业贡献](project/pwol-drawdown-guard/README.md)。
 - [x] P1：[用全新三路径比较分档与砍半](project/pwol-tiered-drawdown/README.md)，验证跳空先于成交、费用及两级归因。
-- [ ] P2：预先锁定多种子、连续跳空、假反弹和有滑点的样本，报告分档规则的联合过线率与全期费后差额；真实表现 UNMEASURED。
+- [x] P2：[冻结 64 条合成样本](project/pwol-drawdown-batch/README.md)，报告联合过线率、全期费后差额和独立 SQL 归因。
+- [ ] P2：若提出新的暴露下限或恢复规则，先锁另一批路径再跑；比对不同滑点下的全期门槛，不用旧样本调参。真实表现 UNMEASURED。
 - [ ] P2：在新合成路径上预置开盘跳空、费用上升和多次切换，各指标重对账；不在已看路径调阈值。
 - [ ] P1：加缺损／晚报和两个基准的压力夹具；图与指标须在零收益、缺损输入中一致。
 - [ ] P1：用 [同一份合成回测夹具](project/synthetic-backtest-comparison/README.md)实现至少两个适配器；验收现金、持仓、手续费及逐日权益，保留失败例。当前工具执行是 `NOT_RUN`。

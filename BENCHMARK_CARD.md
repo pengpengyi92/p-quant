@@ -2,6 +2,8 @@
 
 ## 合成组合绘图与指标链
 
+[64 条合成压力](project/pwol-drawdown-batch/README.md)：Baseline 为原版与 8% 砍半；Change 为连续跳空、反复假反弹和两档滑点；Measure 同基准联合门槛、最差回撤和全期费后差，Python/SQLite 对账；Result 两档均仅 6/64 联合通过，主要档最差回撤改善但全期配对中位差 −4.07 pp；Trade-off 小些的最坏回撤与反弹参与冲突；Next Action 留用砍半基线，另冻结未用样本再研究。实盘 UNMEASURED。
+
 [分档对砍半](project/pwol-tiered-drawdown/README.md)：Baseline 为原版与 8% 砍半；Change 为分档降仓、逐档恢复，含实际开盘前跳空；Measure 按 5/15 bp 费率看回撤、固定反弹、双边换手与行业；Result 两档费用均为 V 形、假反弹过线，跳空未过线；Trade-off 假反弹短窗仅多拿约 0.03 pp，5 bp 下全期少 6.59 pp；Next Action 保留基线，用预置新样本检验滑点、跳空和反复反弹。真实效果 UNMEASURED。
 
 [回撤降仓三路径](project/pwol-drawdown-guard/README.md)：Baseline 为同资产不降仓，Change 为仅看过去的风险开关，Measure 为同基准 MDD、跌后净收益及可对账行业贡献，Result 为 V 形少回撤 6.96 pp、少赚 19.15 pp。Trade-off：持续低仓位可挡后续跌幅，也能错过快速恢复。Next Action：在新数据测跳空和反复切换；真实效果 UNMEASURED。

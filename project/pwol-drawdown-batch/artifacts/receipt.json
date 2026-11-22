@@ -1,0 +1,23 @@
+{
+  "title": "PWOL 64-path synthetic Python and SQLite replay receipt",
+  "author": "Pengyi Peng",
+  "timestamp": "2026-11-22T17:28:24+08:00",
+  "scope": "SYNTHETIC_ONLY_NO_TRADE",
+  "frozen_at": "2026-11-22T17:23:08+08:00",
+  "protocol_sha256": "1d6f77575e7531a75224d0321a8262fc0a21765034d34561ddc164ba8dba47ef",
+  "python": "3.12.14",
+  "sqlite": "3.53.1",
+  "matplotlib": "3.11.2",
+  "unit_tests_passed": 32,
+  "saved_json_replays_matched": 2,
+  "svg_renders_matched": 3,
+  "legacy_numeric_outputs_matched": 11,
+  "practice_sql_queries_executed": 3,
+  "sha256": {
+    "attribution.json": "b5772793d31995114445ee8ade8a7ee27ea245b626a6ce028df49c0e84c7830a",
+    "example.json": "19418d00a2f4a226d959218b91000ad7bb23a846b3f19daef72805607e0b47d4",
+    "paths.json": "2172fb0d8463f578fb278c5c752f9e0749ef78bb4c97fe45396f11906406f60f",
+    "summary.json": "cab4897d1f85e9a988e20c49e5de342816fa9a39cf913ee1a23dff1889ad228d",
+    "comparison.svg": "38de905a50909894eb607339b285d3604441dd988d25c0b1a0eefa3acdcbd237"
+  }
+}
