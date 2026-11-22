@@ -29,3 +29,7 @@
 | 组合／基准／相对回撤 | 分别对组合净值、基准净值和两者的净值比，从自己的峰值（含起点）量最大下探。 |
 
 [合成基准和未校准下跌验收](../project/pwol-benchmark-stress/README.md) · [完整指标矩阵](../report/2026-11-22-pwol-benchmark-and-stress.md)
+
+## Sector 与 industry 对账
+
+`attribution.partition_contributions` 按资产聚合当期仓位产生的毛损益，减去该资产自己的费用，再用窗口起始 NAV 归一。所有 sector 的贡献和、所有 industry 的贡献和分别等于组合净收益；这是贡献，不是行业独立收益。`guard_effects` 区分最大回撤改善、期末累计差与固定跌后窗口的收益差。[三路径例子](../project/pwol-drawdown-guard/README.md)

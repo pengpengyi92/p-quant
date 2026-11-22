@@ -26,11 +26,18 @@ class Fill:
     fee: float
 
 
+@dataclass(frozen=True)
+class AssetMark:
+    gross_pnl: float
+    fee: float
+
+
 @dataclass
 class Run:
     initial_nav: float
     sessions: list[Session]
     fills: list[Fill]
+    asset_marks: list[dict[str, AssetMark]] | None = None
 
     def session_rows(self) -> list[dict]:
         return [asdict(row) for row in self.sessions]
@@ -51,12 +58,19 @@ def _target_value(nav, positions, weights, fee_rate):
     return (left + right) / 2
 
 
-def run_backtest(returns, targets, *, initial_nav=1_000_000.0, cost_bps=5.0):
+def _valid_target(w, names):
+    return (set(w) <= names and all(isfinite(v) and v >= 0 for v in w.values())
+            and fsum(w.values()) <= 1 + ZERO)
+
+
+def run_backtest(returns, targets, *, initial_nav=1_000_000.0, cost_bps=5.0,
+                 target_policy=None, track_attribution=False):
     """Execute targets issued at t-1 before applying return for session t.
 
     Index 0 is the starting mark; returns[0] is session 1 close-to-close.
     The toy open is the previous close (no gaps). The engine doesn't use a
     session's realized returns when calculating its opening trades.
+    A policy receives only the decision ID, prior close NAV and scheduled target.
     """
     if not returns or not returns[0] or not isfinite(initial_nav) or initial_nav <= 0:
         raise ValueError("need positive initial NAV and a nonempty return panel")
@@ -66,20 +80,24 @@ def run_backtest(returns, targets, *, initial_nav=1_000_000.0, cost_bps=5.0):
     names = set(assets)
     n = len(returns)
     for t, w in targets.items():
-        if (type(t) is not int or not 0 <= t < n or not set(w) <= names
-                or any(not isfinite(v) or v < 0 for v in w.values())
-                or fsum(w.values()) > 1 + ZERO):
+        if type(t) is not int or not 0 <= t < n or not _valid_target(w,names):
             raise ValueError("invalid target date, instrument or long-only weight")
     fee_rate = cost_bps / 10_000
     cash, nav = float(initial_nav), float(initial_nav)
     pos = dict.fromkeys(assets, 0.0)
     rows, fills = [], []
+    marks = [] if track_attribution else None
     for t, day in enumerate(returns, 1):
         if set(day) != names or any(not isfinite(x) or x <= -1 for x in day.values()):
             raise ValueError("invalid or missing asset return")
         nav_at_open = nav
         buys = sells = fees = 0.0
         target = targets.get(t - 1)
+        fee_by_asset = dict.fromkeys(assets,0.) if track_attribution else None
+        if target_policy is not None:
+            target = target_policy(t-1, nav_at_open, None if target is None else dict(target))
+            if target is not None and not _valid_target(target,names):
+                raise ValueError("policy returned invalid long-only weights")
         if target is not None:
             w = {a: target.get(a, 0.0) for a in assets}
             weights_sum = fsum(w.values())
@@ -96,15 +114,19 @@ def run_backtest(returns, targets, *, initial_nav=1_000_000.0, cost_bps=5.0):
                     buys += max(delta, 0)
                     sells += max(-delta, 0)
                     fees += fill_fee
+                    if track_attribution:
+                        fee_by_asset[a] = fill_fee
             cash -= buys - sells + fees
             if not abs(cash - free_nav * (1 - weights_sum)) < 1e-9 * nav_at_open:
                 raise ArithmeticError("cash must fund trades and fees")
             cash = max(cash, 0.0)
             pos = next_pos
+        if track_attribution:
+            marks.append({a:AssetMark(pos[a]*day[a],fee_by_asset[a]) for a in assets})
         pos = {a: pos[a] * (1 + day[a]) for a in assets}
         nav = cash + fsum(pos.values())
         if not isfinite(nav) or nav <= 0:
             raise ArithmeticError("insolvency or nonfinite equity")
         rows.append(Session(t, nav, cash, nav / nav_at_open - 1, fees, buys, sells,
                             (buys + sells) / nav_at_open))
-    return Run(float(initial_nav), rows, fills)
+    return Run(float(initial_nav), rows, fills, marks)

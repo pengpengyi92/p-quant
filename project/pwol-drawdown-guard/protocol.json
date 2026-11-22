@@ -1,0 +1,99 @@
+{
+  "version": 1,
+  "title": "PWOL-style drawdown guard under three unfitted synthetic paths",
+  "author": "Pengyi Peng",
+  "frozen_at": "2026-11-22T17:01:34+08:00",
+  "scope": "SYNTHETIC_ONLY_NO_TRADE",
+  "market_data": false,
+  "execution_authorized": false,
+  "samples": {
+    "sessions": 252,
+    "initial_nav": 1000000,
+    "cost_bps": 5,
+    "rebalance_every": 21,
+    "sector_a_even": 0.535,
+    "sector_a_odd": 0.465,
+    "benchmark": "Equal initial 25% per synthetic asset; buy-and-hold, fee-free; common across both portfolios within each scenario"
+  },
+  "guard": {
+    "reduce_on_drawdown": 0.08,
+    "restore_within_drawdown": 0.04,
+    "reduced_target": 0.5,
+    "minimum_completed_sessions": 5,
+    "basis": "Own policy NAV and high-water mark through prior close; execute on next simulated no-gap open"
+  },
+  "shocks": {
+    "base_log_drift": 0.00027,
+    "market_sigma": 0.0052,
+    "sector_sigma": 0.0015,
+    "industry_sigma": 0.00165
+  },
+  "assets": {
+    "SYN_SOFTWARE": {
+      "sector": "Technology",
+      "industry": "Software",
+      "loading": 1.12
+    },
+    "SYN_SEMICONDUCTORS": {
+      "sector": "Technology",
+      "industry": "Semiconductors",
+      "loading": 1.27
+    },
+    "SYN_LOGISTICS": {
+      "sector": "Industrials",
+      "industry": "Logistics",
+      "loading": 0.78
+    },
+    "SYN_CAPITAL_GOODS": {
+      "sector": "Industrials",
+      "industry": "Capital Goods",
+      "loading": 0.92
+    }
+  },
+  "cases": {
+    "cliff": {
+      "label": "Sudden crash",
+      "seed": 310501,
+      "selloff": [
+        75,
+        82
+      ],
+      "selloff_log_shift": -0.027,
+      "rebound_window": [
+        83,
+        116
+      ],
+      "rebound_log_shift": 0
+    },
+    "grind": {
+      "label": "Grinding decline",
+      "seed": 310502,
+      "selloff": [
+        40,
+        165
+      ],
+      "selloff_log_shift": -0.00245,
+      "rebound_window": [
+        166,
+        200
+      ],
+      "rebound_log_shift": 0
+    },
+    "v_rebound": {
+      "label": "V-shaped rebound",
+      "seed": 310503,
+      "selloff": [
+        72,
+        83
+      ],
+      "selloff_log_shift": -0.022,
+      "rebound_window": [
+        84,
+        115
+      ],
+      "rebound_log_shift": 0.012
+    }
+  },
+  "calibration": "NONE; no target return/Sharpe/drawdown, no seed selection or holdout tuning",
+  "windows": "Session intervals are inclusive, 1-based. Rebound evaluation uses prior-session close to window-end close; not used by risk policy."
+}

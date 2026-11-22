@@ -1,0 +1,18 @@
+{
+  "title": "Drawdown guard replay and industry reconciliation",
+  "author": "Pengyi Peng",
+  "timestamp": "2026-11-22T17:03:39+08:00",
+  "python": "Python 3.12.14",
+  "matplotlib": "3.11.2",
+  "scope": "SYNTHETIC_ONLY_NO_TRADE",
+  "numeric_replays_matched": 3,
+  "svg_renders_matched": 2,
+  "legacy_demo_ledger_unchanged": true,
+  "max_abs_attribution_reconciliation": 1.979060471057892e-9,
+  "matching_sha256": {
+    "summary.json": "316a2393a0354b19fdfcf4a7da89d98692a5fbada354e16468fd9c8176faf1a0",
+    "series.json": "a4e1371bc67df9c2e94319a78ebac5efa381500da64e36b2ef1ceb88753783de",
+    "attribution.json": "3f9ca7310fd7d6e70a5262758822944ce8f8f04fd1b7d349f867c6c48e974591",
+    "comparison.svg": "49682d932e2a3e36fce11e385d47d63880a3070e35233aca9c3b70ef51406d1e"
+  }
+}
