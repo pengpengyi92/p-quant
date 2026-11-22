@@ -11,3 +11,5 @@ python -B -m pbacktest.pwol_demo --output .local/pwol-run
 ```
 
 日账本和成交账本都是模拟产物。未来接入其他引擎前先验价格、可用时点、费用、成交的逐笔口径，不默认横向可比。
+
+用 `python -m pbacktest.pwol_benchmark_stress --output .local/pwol-benchmark-replay` 跑两个合成情景：[给原组合加基准，以及固定冲击下的独立压力](../project/pwol-benchmark-stress/README.md)。后者沿用相同的账本引擎和权重，但完全不拟合收益。

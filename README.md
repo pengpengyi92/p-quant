@@ -17,6 +17,8 @@
 
 [PWOL 风格合成组合示例](project/pwol-synthetic-demo/README.md)：用一次可复跑的月频演示串起三模块。50% 和 Sharpe 5 为校准目标，不代表 PWOL 真实业绩。
 
+[基准与未校准下跌压力](project/pwol-benchmark-stress/README.md)：同样的组合规则在刻意下跌的合成情景里表现更差；净值和回撤均用同刻度对照，指标由 `pevluation` 计算。
+
 **快速开始：**画 GitHub 流程图看 [Mermaid](repo/diagrams.md)，画净值/回撤先看 [Matplotlib 或 Plotly](repo/visualization.md)，想批量研究信号、比事件引擎或核对盘口模拟看 [回测工具目录](repo/backtesting.md)。优先读[首期选型报告](report/2026-11-22-diagram-and-backtesting-tools.md)。
 
 本仓用于公开研究教育与技术索引。只录入上游链接、原创说明和合成例子；不存受限行情、不收私有材料、也不提供交易接入。[贡献方式](CONTRIBUTING.md) · [计划](TODO.md) · [Benchmark Card](BENCHMARK_CARD.md)。

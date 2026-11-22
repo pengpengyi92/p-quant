@@ -4,6 +4,8 @@ pdrawer 只画已经算好的结果，不改账本、不重新拟合指标。读
 
 [看 PWOL 风格合成演示图](../project/pwol-synthetic-demo/artifacts/pwol-synthetic-dashboard.svg)
 
+[看合成基准和下跌压力的净值／回撤同刻度图](../project/pwol-benchmark-stress/artifacts/comparison.svg)。`python -m pdrawer.benchmark --run <结果目录> --output <图文件前缀>` 从两套已对账的轨迹画对照，不重新算统计量。
+
 Python 3.12 环境（系统不必有图形界面），在仓库根运行：
 
 ```bash

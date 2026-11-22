@@ -9,6 +9,8 @@
 
 [指标与口径](../../pevluation/README.md) · [摘要](artifacts/summary.json) · [逐期序列](artifacts/series.json) · [24 笔模拟成交](artifacts/fills.json) · [选型与复盘说明](../../report/2026-11-22-pwol-synthetic-portfolio.md)
 
+续篇：[合成基准和未校准下跌压力](../pwol-benchmark-stress/README.md)。此处的原始逐期净值与产物未改。
+
 ## 复现
 
 在仓库根目录用 Python 3.12。绘图需安装已固定的 Matplotlib；回测与测试用标准库。下面给新的本地目录，避免覆盖现有快照。

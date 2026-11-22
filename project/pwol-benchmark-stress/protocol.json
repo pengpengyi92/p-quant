@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "title": "PWOL-style portfolio synthetic benchmark and unfitted stress path",
+  "author": "Pengyi Peng",
+  "freeze_at": "2026-11-22T16:52:54+08:00",
+  "scope": "SYNTHETIC_ONLY_NO_TRADE",
+  "market_data": false,
+  "execution_authorized": false,
+  "original_fixture_sha256": "358d8ecb49cb75481a8e2e10db9c9ed4614aa3d6f9f971f8316cd0b9dbb41fe5",
+  "horizon": {
+    "sessions": 252,
+    "periods_per_year": 252,
+    "risk_free_annual": 0
+  },
+  "base_benchmark": {
+    "id": "SYN_BASE_INDEX",
+    "seed": 930117,
+    "fixed_log_drift": 0.00048,
+    "shared_factor_loading": 0.0061,
+    "independent_noise": 0.0032,
+    "fee_bps": 0
+  },
+  "stress": {
+    "id": "UNFITTED_SELL_OFF",
+    "seed": 220711,
+    "portfolio_fixed_log_drift": 0.00028,
+    "portfolio_loading": 1.17,
+    "benchmark_fixed_log_drift": 0.0003,
+    "common_noise": 0.0061,
+    "benchmark_independent_noise": 0.0035,
+    "asset_spread_noise": 0.0026,
+    "shock_windows": [
+      {
+        "first": 73,
+        "last": 112,
+        "log_shock": -0.0046
+      },
+      {
+        "first": 149,
+        "last": 166,
+        "log_shock": -0.003
+      }
+    ],
+    "parameters_fitted_to_performance": false,
+    "benchmark_fee_bps": 0
+  },
+  "conventions": [
+    "both benchmarks are hypothetical fee-free hold indices, not buyable instruments",
+    "shock window endpoints inclusive, one-indexed; both use identical observable session IDs",
+    "same fee and target-weight schedule as original; alternate 53.5/46.5 with 46.5/53.5 every 21 sessions",
+    "the original path was intentionally fitted in the earlier demo; no parameters of either benchmark or the stress path are calibrated"
+  ]
+}

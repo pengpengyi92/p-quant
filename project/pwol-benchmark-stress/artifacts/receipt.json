@@ -1,0 +1,15 @@
+{
+  "title": "Synthetic benchmark and stress replay receipt",
+  "author": "Pengyi Peng",
+  "timestamp": "2026-11-22T16:54:18+08:00",
+  "only_synthetic": true,
+  "python": "Python 3.12.14",
+  "matplotlib": "3.11.2",
+  "numeric_processes_matched": 3,
+  "svg_renders_matched": 2,
+  "matching_sha256": {
+    "summary.json": "424ef4218d40a30695b904bf5b72ed0c22626178acbcf2ff8fdb2a200399b216",
+    "comparison-series.json": "118f09088bc54b3cc20b8d5089daa93f96c97038659c55ef35f08af75a3f7e1f",
+    "comparison.svg": "79ed15c98b152437a77d52916dcb729326304ef89553d61bcb192314c1faa3e6"
+  }
+}
