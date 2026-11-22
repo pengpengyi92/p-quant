@@ -1,0 +1,173 @@
+{
+  "scope": "CALIBRATED_SYNTHETIC_DEMO_ONLY",
+  "rows": [
+    {
+      "decision_session": 0,
+      "fill_session": 1,
+      "asset": "SYN_A",
+      "signed_notional": 534732.6336831584,
+      "fee": 267.36631684157925
+    },
+    {
+      "decision_session": 0,
+      "fill_session": 1,
+      "asset": "SYN_B",
+      "signed_notional": 464767.616191904,
+      "fee": 232.38380809595202
+    },
+    {
+      "decision_session": 21,
+      "fill_session": 22,
+      "asset": "SYN_A",
+      "signed_notional": -76247.44649258401,
+      "fee": 38.12372324629201
+    },
+    {
+      "decision_session": 21,
+      "fill_session": 22,
+      "asset": "SYN_B",
+      "signed_notional": 76171.23715076246,
+      "fee": 38.08561857538123
+    },
+    {
+      "decision_session": 42,
+      "fill_session": 43,
+      "asset": "SYN_A",
+      "signed_notional": 75704.83546891506,
+      "fee": 37.85241773445753
+    },
+    {
+      "decision_session": 42,
+      "fill_session": 43,
+      "asset": "SYN_B",
+      "signed_notional": -75780.57817573723,
+      "fee": 37.89028908786862
+    },
+    {
+      "decision_session": 63,
+      "fill_session": 64,
+      "asset": "SYN_A",
+      "signed_notional": -76396.55845402798,
+      "fee": 38.19827922701399
+    },
+    {
+      "decision_session": 63,
+      "fill_session": 64,
+      "asset": "SYN_B",
+      "signed_notional": 76320.20007476374,
+      "fee": 38.160100037381866
+    },
+    {
+      "decision_session": 84,
+      "fill_session": 85,
+      "asset": "SYN_A",
+      "signed_notional": 79219.24943970202,
+      "fee": 39.60962471985101
+    },
+    {
+      "decision_session": 84,
+      "fill_session": 85,
+      "asset": "SYN_B",
+      "signed_notional": -79298.50831858139,
+      "fee": 39.64925415929069
+    },
+    {
+      "decision_session": 105,
+      "fill_session": 106,
+      "asset": "SYN_A",
+      "signed_notional": -82747.1605893838,
+      "fee": 41.3735802946919
+    },
+    {
+      "decision_session": 105,
+      "fill_session": 106,
+      "asset": "SYN_B",
+      "signed_notional": 82664.45478169841,
+      "fee": 41.332227390849205
+    },
+    {
+      "decision_session": 126,
+      "fill_session": 127,
+      "asset": "SYN_A",
+      "signed_notional": 87372.79192229919,
+      "fee": 43.6863959611496
+    },
+    {
+      "decision_session": 126,
+      "fill_session": 127,
+      "asset": "SYN_B",
+      "signed_notional": -87460.20842247154,
+      "fee": 43.73010421123577
+    },
+    {
+      "decision_session": 147,
+      "fill_session": 148,
+      "asset": "SYN_A",
+      "signed_notional": -78846.11450656911,
+      "fee": 39.423057253284554
+    },
+    {
+      "decision_session": 147,
+      "fill_session": 148,
+      "asset": "SYN_B",
+      "signed_notional": 78767.30779541796,
+      "fee": 39.38365389770898
+    },
+    {
+      "decision_session": 168,
+      "fill_session": 169,
+      "asset": "SYN_A",
+      "signed_notional": 97202.91353288922,
+      "fee": 48.601456766444606
+    },
+    {
+      "decision_session": 168,
+      "fill_session": 169,
+      "asset": "SYN_B",
+      "signed_notional": -97300.1650721915,
+      "fee": 48.65008253609575
+    },
+    {
+      "decision_session": 189,
+      "fill_session": 190,
+      "asset": "SYN_A",
+      "signed_notional": -93787.39302839525,
+      "fee": 46.89369651419763
+    },
+    {
+      "decision_session": 189,
+      "fill_session": 190,
+      "asset": "SYN_B",
+      "signed_notional": 93693.65250562818,
+      "fee": 46.84682625281409
+    },
+    {
+      "decision_session": 210,
+      "fill_session": 211,
+      "asset": "SYN_A",
+      "signed_notional": 104697.95670026797,
+      "fee": 52.34897835013398
+    },
+    {
+      "decision_session": 210,
+      "fill_session": 211,
+      "asset": "SYN_B",
+      "signed_notional": -104802.70703213371,
+      "fee": 52.401353516066855
+    },
+    {
+      "decision_session": 231,
+      "fill_session": 232,
+      "asset": "SYN_A",
+      "signed_notional": -107379.01872325479,
+      "fee": 53.689509361627394
+    },
+    {
+      "decision_session": 231,
+      "fill_session": 232,
+      "asset": "SYN_B",
+      "signed_notional": 107271.69336720987,
+      "fee": 53.63584668360493
+    }
+  ]
+}

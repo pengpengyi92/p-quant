@@ -1,5 +1,9 @@
 # 公众目录与回测一致性基准
 
+## 合成组合绘图与指标链
+
+[同一合成账本](project/pwol-synthetic-demo/README.md)：Baseline 为手算费用与时点，Change 为可复算回测、指标矩阵、静态渲染；Measure 为 NAV、交易与输出哈希，Result 为 3 次数字及 2 次 SVG 同环境复跑一致。Trade-off：上调路径只用于演示，不能检验市场预测。Next Action：锁定不按收益校准的压力路径和独立引擎再验；真实表现 UNMEASURED。
+
 **作者：Pengyi Peng｜时间：2026-11-22T15:35:56+08:00（Asia/Shanghai）**
 
 | Baseline | Change | Measure | Result | Trade-off | Next Action |

@@ -103,7 +103,7 @@ def validate(root=ROOT):
         for r in (r for r in rows if r["category"] == category):
             require(f']({r["upstream"]})' in page, f'uncataloged in category page: {r["id"]}')
     files = list(root.glob("*.md"))
-    for section in SECTIONS:
+    for section in SECTIONS | {"pbacktest", "pevluation", "pdrawer"}:
         files.extend((root/section).rglob("*.md"))
     local_links = 0
     reports = 0

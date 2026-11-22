@@ -11,6 +11,11 @@
 | [project](project/README.md) | 可复现实验协议、预期结果和验证 |
 | [example](example/README.md) | Mermaid 回测流程图及从图到证据的例子 |
 | [template](template/README.md) | 新仓入库与证据字段 |
+| [pbacktest](pbacktest/README.md) | 离线回测、成交／费用与 NAV 账本 |
+| [pevluation](pevluation/README.md) | 指标计算和评估矩阵 |
+| [pdrawer](pdrawer/README.md) | 从实验产物统一绘图与导出 |
+
+[PWOL 风格合成组合示例](project/pwol-synthetic-demo/README.md)：用一次可复跑的月频演示串起三模块。50% 和 Sharpe 5 为校准目标，不代表 PWOL 真实业绩。
 
 **快速开始：**画 GitHub 流程图看 [Mermaid](repo/diagrams.md)，画净值/回撤先看 [Matplotlib 或 Plotly](repo/visualization.md)，想批量研究信号、比事件引擎或核对盘口模拟看 [回测工具目录](repo/backtesting.md)。优先读[首期选型报告](report/2026-11-22-diagram-and-backtesting-tools.md)。
 

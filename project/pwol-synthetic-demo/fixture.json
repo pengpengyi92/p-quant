@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "author": "Pengyi Peng",
+  "timestamp": "2026-11-22T16:44:54+08:00",
+  "scope": "CALIBRATED_SYNTHETIC_DEMO_ONLY",
+  "market_data": false,
+  "seed": 61483,
+  "sessions": 252,
+  "periods_per_year": 252,
+  "risk_free_annual": 0,
+  "initial_nav": 1000000,
+  "cost_bps": 5,
+  "rebalance_every_sessions": 21,
+  "weight_a_even": 0.535,
+  "weight_a_odd": 0.465,
+  "spread_noise": 0.0021,
+  "target_return": 0.5,
+  "target_sharpe": 5,
+  "illustrative_drawdown_ceiling": 0.06,
+  "scale_bracket": [
+    0.0001,
+    0.025
+  ],
+  "convention": "Synthetic close decision t-1, synthetic no-gap open fill t; 21-session blocks approximate monthly."
+}

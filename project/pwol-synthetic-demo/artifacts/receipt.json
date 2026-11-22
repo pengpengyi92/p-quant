@@ -1,0 +1,17 @@
+{
+  "title": "Synthetic portfolio tooling reproducibility receipt",
+  "author": "Pengyi Peng",
+  "timestamp": "2026-11-22T16:48:16+08:00",
+  "scope": "CALIBRATED_SYNTHETIC_DEMO_ONLY",
+  "python": "Python 3.12.14",
+  "matplotlib": "3.11.2",
+  "independent_numeric_runs": 3,
+  "independent_svg_renders": 2,
+  "matching_sha256": {
+    "summary.json": "f8f28ff0b5ce44068e6baf9e5b869b5adebb922f3c0a0345d4e75b3a49490fb2",
+    "series.json": "11301c286163aaadf713a38885ac3ca5b770043dbdf4a06792e7610bd708850d",
+    "fills.json": "51e3d6396e9c472b49b7721ddd5913153e67ad6378ee2f0125f4f636ee72f38c",
+    "pwol-synthetic-dashboard.svg": "71e6f187af2180aa2d45a9a944400e69eacfeba8eac5c322878ac6a42e16539e"
+  },
+  "market_use": false
+}
