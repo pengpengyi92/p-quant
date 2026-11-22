@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "scenario": "DIDACTIC_NEXT_OPEN_001",
+  "synthetic": true,
+  "asset": "SYNTH_A",
+  "initial_cash": 1000,
+  "fee_per_fill": 1,
+  "slippage": 0,
+  "price_convention": "target decided at close t, fill open t+1, mark at close; no order if delta is zero",
+  "bar": [
+    {
+      "t": 0,
+      "open": 9,
+      "close": 9,
+      "close_target": 10
+    },
+    {
+      "t": 1,
+      "open": 10,
+      "close": 11,
+      "close_target": 0
+    },
+    {
+      "t": 2,
+      "open": 12,
+      "close": 12,
+      "close_target": null
+    }
+  ],
+  "expected": {
+    "cash": [
+      1000,
+      899,
+      1018
+    ],
+    "quantity": [
+      0,
+      10,
+      0
+    ],
+    "equity": [
+      1000,
+      1009,
+      1018
+    ],
+    "fee_total": 2,
+    "final_cash_fee_2": 1016
+  },
+  "adapter_status": "NOT_RUN",
+  "market_data": false
+}
