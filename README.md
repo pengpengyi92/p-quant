@@ -1,3 +1,11 @@
+<!-- 20261126_164222_QUANT_AI_GROWTH_TWO_CURVES -->
+## 2026-11-26 16:42:22 Asia/Shanghai — Quant 2024→2026 × Corporate Banking Ownership × AI Second Curve
+
+[研究记录](research/2026-11-26_164222_ALPHA_RESEARCH_MANUAL_VS_AI_WORKFLOW_BENCHMARK.md) — 公开研究协议：Manual vs Scripted vs AI-assisted Alpha Research，当前 NOT_RUN / UNMEASURED。
+
+**Owner:** Pengyi Peng · **Status:** PUBLIC / BENCHMARK_PROTOCOL / NOT_RUN / UNMEASURED · 本次只新增知识与研究协议，不代表执行策略、获得内部系统权限、完成业绩回测或收到岗位录取。Timestamp: 2026-11-26T16:42:22+08:00。
+<!-- /20261126_164222_QUANT_AI_GROWTH_TWO_CURVES -->
+
 # p-quant
 
 公开的量化研究资源目录：收录画流程图、画研究结果与做量化回测的工具，也收录论文、可复现实验和选型讨论。先按任务找工具，再用同一份测试输入比行为。
